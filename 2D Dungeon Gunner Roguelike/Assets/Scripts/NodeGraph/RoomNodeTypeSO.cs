@@ -10,7 +10,7 @@ public class RoomNodeTypeSO : ScriptableObject
     #region Header
     [Header("Only flag the RoomNodeTypes that should be visible in the editor")]
     #endregion Header
-    public bool displayINNodeGraphEditor = true;
+    public bool displayInNodeGraphEditor = true;
     #region Header
     [Header("One Type should be a corridor")]
     #endregion Header
