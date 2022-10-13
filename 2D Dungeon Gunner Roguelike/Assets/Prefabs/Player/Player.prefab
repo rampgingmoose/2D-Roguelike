@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6616331621750296261}
   m_Layer: 18
-  m_Name: Weapon Rotation Point
+  m_Name: WeaponRotationPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,6 +277,12 @@ GameObject:
   - component: {fileID: 6616331621914306327}
   - component: {fileID: 6616331621914306324}
   - component: {fileID: 6616331621914306325}
+  - component: {fileID: 6365229034350945011}
+  - component: {fileID: 5291117420836019505}
+  - component: {fileID: 5430305286986995777}
+  - component: {fileID: 1412206521248140110}
+  - component: {fileID: 8756928327932039050}
+  - component: {fileID: 6872746537214341142}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -494,8 +500,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerDetails: {fileID: 0}
   health: {fileID: 0}
+  idleEvent: {fileID: 0}
+  aimWeaponEvent: {fileID: 0}
+  movementByVelocityEvent: {fileID: 0}
   spriteRenderer: {fileID: 0}
   animator: {fileID: 0}
+--- !u!114 &6365229034350945011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1f442d9b2af8964589c1c304e40eea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementDetails: {fileID: 11400000, guid: 7393f7a886ead1e41b80abaa0309c0a2, type: 2}
+  weaponShootPosition: {fileID: 8489323636364865838}
+--- !u!114 &5291117420836019505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc3fd9799978c741a59a521324db4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5430305286986995777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c329db9be61bd9048961833a5bbbf2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1412206521248140110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7d990f79e0c7b4ba5ba269e68d19f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8756928327932039050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bad4853f0e5c354d8017d9a37ad85d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6872746537214341142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6616331621914306330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3153a93bd753a5f4c92bc3e0c098ed88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponRotationPoinTransform: {fileID: 6616331621750296261}
 --- !u!1 &6616331622299932363
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6616331622299932362}
   m_Layer: 18
-  m_Name: Weapon Anchor Position
+  m_Name: WeaponAnchorPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8489323636364865838}
   m_Layer: 18
-  m_Name: Weapon Shoot Position
+  m_Name: WeaponShootPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
