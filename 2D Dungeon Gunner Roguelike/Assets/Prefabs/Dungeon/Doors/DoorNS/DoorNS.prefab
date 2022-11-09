@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1016974976061903787}
   - component: {fileID: 4902328409350719765}
+  - component: {fileID: 3029079673520376838}
   m_Layer: 13
   m_Name: Door Lighting Control
   m_TagString: Untagged
@@ -117,6 +118,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.75, y: 18}
   m_EdgeRadius: 0
+--- !u!114 &3029079673520376838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868330217535938025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd5304bcd6b8a849a747d92fe7cc038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8621563293636004276
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,6 +142,7 @@ GameObject:
   - component: {fileID: 489351455481346797}
   - component: {fileID: 6501772325121866946}
   - component: {fileID: 7120959278298911308}
+  - component: {fileID: 6766759342373517056}
   m_Layer: 13
   m_Name: DoorNS
   m_TagString: Untagged
@@ -145,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 8621563293636004276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3539470086375233840}
@@ -250,3 +264,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.75, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &6766759342373517056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621563293636004276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd01bda54008b9a41adf0fb0e0de8c24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorCollider: {fileID: 1479924528908994250}
+  isBossRoomDoor: 0

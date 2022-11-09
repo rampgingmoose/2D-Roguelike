@@ -4,6 +4,11 @@ using UnityEngine;
 
 public static class Settings
 {
+    #region UNITS
+    public const float pixelsPerUnit = 16f;
+    public const float tilesSizePixels = 16f;
+    #endregion
+
     #region DUNGEON BUILD SETTINGS
     public const int maxDungeonRebuildAttemptsForRoomGraph = 1000;
     public const int maxDungeonBuildAttempts = 10;
@@ -14,6 +19,9 @@ public static class Settings
     //Max number of child corridors leading from a room. - maximum should be 3 although this is
     //not recommended since it can cause the dungeon building to fail since the rooms are more likely to not fit together.
     public const int maxChildCorridors = 3;
+
+    //time to fade in room
+    public const float fadeInTime = 0.5f;
 
     #endregion
 
@@ -31,5 +39,24 @@ public static class Settings
     public static int rollLeft = Animator.StringToHash("rollLeft");
     public static int rollRight = Animator.StringToHash("rollRight");
     public static int rollDown = Animator.StringToHash("rollDown");
+    public static float baseSpeedForPlayerAnimations = 8f;
+
+    //Animator parameters - door
+    public static int open = Animator.StringToHash("open");
+    #endregion
+
+    #region GAMEOBJECT TAGS
+    public const string playerTag = "Player";
+    public const string playerWeapon = "playerWeapon";
+    #endregion
+
+    #region FIRING CONTROL
+    //If the target distance is less than this then the aim angle will be used (calculated from player),
+    //else the weapon aim angle will be used (calculated from the weapon pivot point)
+    public const float useAimAngleDistance = 3.5f;
+    #endregion
+
+    #region UI Parameter
+    public const float uiAmmoIconSpacing = 4f;
     #endregion
 }

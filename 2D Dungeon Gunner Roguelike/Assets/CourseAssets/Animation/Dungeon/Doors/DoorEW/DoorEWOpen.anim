@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: -2.75, z: 0}
+        value: {x: -0.05, y: -3.5, z: 0}
         inSlope: {x: Infinity, y: 0, z: 0}
         outSlope: {x: Infinity, y: 0, z: 0}
         tangentMode: 0
@@ -36,16 +36,14 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1430398729496427887, guid: 94ceb7f4942570649bd0a897ef2a4ed9,
-        type: 3}
+      value: {fileID: 1314381564, guid: 20b0dd8af8063c74688c74d5e339e1d2, type: 3}
     attribute: m_Sprite
     path: DoorCollider
     classID: 212
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: -4183744404968784156, guid: 8bf4537c840876747a02facf5781dfb0,
-        type: 3}
+      value: {fileID: 1946288951, guid: 56a699daacad2384882f13ecac91d48a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -79,8 +77,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1430398729496427887, guid: 94ceb7f4942570649bd0a897ef2a4ed9, type: 3}
-    - {fileID: -4183744404968784156, guid: 8bf4537c840876747a02facf5781dfb0, type: 3}
+    - {fileID: 1314381564, guid: 20b0dd8af8063c74688c74d5e339e1d2, type: 3}
+    - {fileID: 1946288951, guid: 56a699daacad2384882f13ecac91d48a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -107,7 +105,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: -0.05
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -126,7 +124,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -2.75
+        value: -3.5
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103

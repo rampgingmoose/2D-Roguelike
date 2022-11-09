@@ -35,6 +35,24 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         InstantiatePlayer();
     }
 
+    private void OnEnable()
+    {
+        StaticEventsHandler.OnRoomChanged += StaticEventsHandler_OnRoomChanged;
+    }
+
+    private void OnDisable()
+    {
+        StaticEventsHandler.OnRoomChanged -= StaticEventsHandler_OnRoomChanged;
+    }
+
+    /// <summary>
+    /// Handle room changed event
+    /// </summary>
+    private void StaticEventsHandler_OnRoomChanged(RoomChangedEventArgs roomChangedEventArgs)
+    {
+        SetCurrentRoom(roomChangedEventArgs.room);
+    }
+
     private void Start()
     {
         gameState = GameState.gameStarted;
@@ -45,7 +63,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         HandleGameState();
 
         //For testing
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             gameState = GameState.gameStarted;
         }
@@ -93,6 +111,8 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         {
             Debug.Log("Couldn't build dungeon from specified rooms and node graphs");
         }
+
+        StaticEventsHandler.CallRoomChangedEvent(currentRoom);
 
         //Set player roughly in the middle of the room
         player.gameObject.transform.position = new Vector3((currentRoom.lowerBounds.x + currentRoom.upperBounds.x) / 2f, 

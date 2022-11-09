@@ -36,6 +36,15 @@ public static class HelperUtilities
         return angleInDegrees;
     }
 
+    /// <summary>
+    /// Get the direction vector from an angle in degrees
+    /// </summary>
+    public static Vector3 GetDirectionVectorFromAngle(float angle)
+    {
+        Vector3 directionVector = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0f);
+        return directionVector;
+    }
+
     public static AimDirection GetAimDirection(float angleDegrees)
     {
         AimDirection aimDirection;
@@ -95,7 +104,7 @@ public static class HelperUtilities
     {
         if (objectToCheck == null)
         {
-            Debug.Log(fieldName + " is null and mist contain a vialue in object" + thisObject.name.ToString());
+            Debug.Log(fieldName + " is null and must contain a value in object" + thisObject.name.ToString());
         }
 
         return false;
@@ -145,7 +154,7 @@ public static class HelperUtilities
         {
             if (valueToCheck < 0)
             {
-                Debug.Log(fieldName + " must contain a positive vale or zero in object " + thisObject.name.ToString());
+                Debug.Log(fieldName + " must contain a positive value or zero in object " + thisObject.name.ToString());
                 error = true;
             }
         }
@@ -195,7 +204,7 @@ public static class HelperUtilities
 
         if (valueToCheckMinimum > valueToCheckMaximum)
         {
-            Debug.Log(fieldNameMinimum + " must be less or equal to " + fieldNameMaximum + " in object " + thisObject.name.ToString());
+            Debug.Log(fieldNameMinimum + " must be less than or equal to " + fieldNameMaximum + " in object " + thisObject.name.ToString());
             error = true;
         }
 

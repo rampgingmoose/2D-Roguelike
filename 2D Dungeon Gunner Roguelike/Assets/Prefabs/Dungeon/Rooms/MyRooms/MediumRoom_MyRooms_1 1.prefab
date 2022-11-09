@@ -42110,6 +42110,7 @@ GameObject:
   - component: {fileID: 2432490407256265779}
   - component: {fileID: 6043002312184852778}
   - component: {fileID: -4334870444952760164}
+  - component: {fileID: -8655391562004648594}
   m_Layer: 12
   m_Name: MediumRoom_MyRooms_1 1
   m_TagString: Untagged
@@ -42182,6 +42183,18 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+--- !u!114 &-8655391562004648594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7003326734216193385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a011cc29a4be346a836831fd4693a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7396970855410978421
 GameObject:
   m_ObjectHideFlags: 0
