@@ -684,7 +684,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      steampunk cracked tiles_21: -2140594683
+      steampunk cracked tiles_10: 502139095
       steampunk cracked tiles_19: 957072322
       steampunk cracked tiles_8: -1584056330
       steampunk cracked tiles_6: 270850607
@@ -709,7 +709,7 @@ TextureImporter:
       steampunk cracked tiles_7: -1002931018
       steampunk cracked tiles_13: -389630723
       steampunk cracked tiles_4: -1160058845
-      steampunk cracked tiles_10: 502139095
+      steampunk cracked tiles_21: -2140594683
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

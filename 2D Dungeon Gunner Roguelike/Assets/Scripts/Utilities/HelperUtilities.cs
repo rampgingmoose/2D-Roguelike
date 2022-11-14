@@ -87,6 +87,16 @@ public static class HelperUtilities
         return aimDirection;
     }
 
+    public static float LinearToDecibels(int linear)
+    {
+        float linearScaleRange = 20f;
+
+        //formula to convert from the linear scale to logarithmic decibel scale
+        //The '20' value is an adjustment fact when converting a linear value to a logarithmic value and the decibel scale is an
+        //amptitude scale
+        return Mathf.Log10((float)linear / linearScaleRange) * 20f;
+    }
+
     //<summary>
     // Empty string Debug check
     //<summary>

@@ -125,6 +125,36 @@ public class FireWeapon : MonoBehaviour
 
         if (currentAmmo != null)
         {
+            StartCoroutine(FireAmmoRoutine(currentAmmo, aimAngle, weaponAimAngle, weaponAimDirectionVector));
+        }
+    }
+    /// <summary>
+    /// Coroutine to spawn multiple ammo per shot if specified in the ammo details
+    /// </summary>
+    private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    {
+        int ammoCounter = 0;
+
+        //Get random ammo per shot
+        int ammoPerShot = Random.Range(currentAmmo.ammoSpawnAmountMin, currentAmmo.ammoSpawnAmountMax + 1);
+
+        //Get random interval between ammo
+        float ammoSpawnInterval;
+
+        if (ammoPerShot > 1)
+        {
+            ammoSpawnInterval = Random.Range(currentAmmo.ammoSpawnIntervalMin, currentAmmo.ammoSpawnIntervalMax);
+        }
+        else
+        {
+            ammoSpawnInterval = 0f;
+        }
+
+        //Loop for number of ammo per shot
+        while (ammoCounter < ammoPerShot)
+        {
+            ammoCounter++;
+
             //Get ammo prefab from array
             GameObject ammoPrefab = currentAmmo.ammoPrefabArray[Random.Range(0, currentAmmo.ammoPrefabArray.Length)];
 
@@ -137,16 +167,20 @@ public class FireWeapon : MonoBehaviour
             //Initialize ammo
             ammo.InitializeAmmo(currentAmmo, aimAngle, weaponAimAngle, ammoSpeed, weaponAimDirectionVector);
 
-            //Reduce ammo clip count if not infinite clip capacity
-            if (!activeWeapon.GetCurrentWeapon().weaponDetailsSO.hasInfiniteClipCapacity)
-            {
-                activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
-                activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
-            }
-
-            //Call weapon fired event
-            weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
+            yield return new WaitForSeconds(ammoSpawnInterval);
         }
+
+        //Reduce ammo clip count if not infinite clip capacity
+        if (!activeWeapon.GetCurrentWeapon().weaponDetailsSO.hasInfiniteClipCapacity)
+        {
+            activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;
+            activeWeapon.GetCurrentWeapon().weaponRemainingAmmo--;
+        }
+
+        //Call weapon fired event
+        weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
+
+        WeaponSoundEffect();
     }
 
     private void ResetCoolDownTimer()
@@ -158,5 +192,13 @@ public class FireWeapon : MonoBehaviour
     {
         //Reset precharge timer
         firePrechargeTimer = activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponPrechargeTime;
+    }
+
+    private void WeaponSoundEffect()
+    {
+        if (activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponFiringSoundEffect != null)
+        {
+            SoundEffectManager.Instance.PlaySoundEffect(activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponFiringSoundEffect);
+        }
     }
 }

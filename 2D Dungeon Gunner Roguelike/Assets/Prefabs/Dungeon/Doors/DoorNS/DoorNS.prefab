@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539470086375233840}
   - component: {fileID: 1479924528908994250}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Door Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 1016974976061903787}
   - component: {fileID: 4902328409350719765}
   - component: {fileID: 3029079673520376838}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Door Lighting Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}

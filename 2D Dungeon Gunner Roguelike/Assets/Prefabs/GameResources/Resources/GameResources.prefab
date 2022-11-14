@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNodeTypeList: {fileID: 11400000, guid: 8766c036dbc21e742b7575a42f19371e, type: 2}
   currentPlayer: {fileID: 11400000, guid: 28db7f98778323b40802d71925ea5e56, type: 2}
+  soundsMasterMixerGroup: {fileID: -4734643798044506327, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  doorOpenSoundEffect: {fileID: 11400000, guid: 67937ce69654c844abbc666d17d42618, type: 2}
   dimmedMaterial: {fileID: 2100000, guid: fd5ae752e16da36428c7ae98c49dc19e, type: 2}
   litMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   variableLitShader: {fileID: -6465566751694194690, guid: a6d82cedd3d148449b0979d8a738a8f0, type: 3}

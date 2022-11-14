@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameResources : MonoBehaviour
 {
@@ -34,6 +35,19 @@ public class GameResources : MonoBehaviour
     [Tooltip("The current player scriptable object - this is used to reference the current player between scenes")]
     #endregion
     public CurrentPlayerSO currentPlayer;
+
+    #region Header SOUNDS
+    [Space(10)]
+    [Header("SOUNDS")]
+    #endregion
+    #region
+    [Tooltip("Populate with the sounds master mixer group")]
+    #endregion
+    public AudioMixerGroup soundsMasterMixerGroup;
+    #region
+    [Tooltip("Door open and close sound effect")]
+    #endregion
+    public SoundEffectSO doorOpenSoundEffect;
 
     #region Header MATERIALS
     [Space(10)]
@@ -75,6 +89,8 @@ public class GameResources : MonoBehaviour
         HelperUtilities.ValidateCheckNullValue(this, nameof(litMaterial), litMaterial);
         HelperUtilities.ValidateCheckNullValue(this, nameof(variableLitShader), variableLitShader);
         HelperUtilities.ValidateCheckNullValue(this, nameof(ammoIconPrefab), ammoIconPrefab);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(doorOpenSoundEffect), doorOpenSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(soundsMasterMixerGroup), soundsMasterMixerGroup);
     }
 
 #endif

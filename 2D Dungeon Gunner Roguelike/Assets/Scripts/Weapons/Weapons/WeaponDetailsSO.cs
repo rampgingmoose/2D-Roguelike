@@ -29,6 +29,14 @@ public class WeaponDetailsSO : ScriptableObject
     [Tooltip("Weapon current ammo")]
     public AmmoDetailsSO weaponCurrentAmmo;
     #endregion
+    #region
+    [Tooltip("The firing Sound effect SO for the weapon")]
+    #endregion
+    public SoundEffectSO weaponFiringSoundEffect;
+    #region
+    [Tooltip("The reloading sound effect SO for the weapon")]
+    #endregion
+    public SoundEffectSO weaponReloadingSoundEffect;
 
     #region Header WEAPON OPERATING VALUES
     [Space(10)]
