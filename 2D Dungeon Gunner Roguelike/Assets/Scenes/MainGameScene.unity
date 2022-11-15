@@ -1280,7 +1280,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 0.9997038
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2251,6 +2251,9 @@ MonoBehaviour:
   - poolSize: 40
     prefab: {fileID: 8120355338546963742, guid: 195346d1e5ac12d4b91bfc830c7c430f, type: 3}
     componentType: SoundEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: 46b8d89f3687732438358976bf41f0a9, type: 3}
+    componentType: WeaponShootEffect
 --- !u!4 &1357968470
 Transform:
   m_ObjectHideFlags: 0

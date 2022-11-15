@@ -673,6 +673,7 @@ MonoBehaviour:
   weaponSpriteRenderer: {fileID: 6616331621519564933}
   weaponPolgonCollider2D: {fileID: 6616331621519564938}
   weaponShootPositionTransform: {fileID: 8489323636364865838}
+  weaponRotationPoint: {fileID: 6616331621750296261}
   weaponEffectPositionTransform: {fileID: 605382912548930350}
 --- !u!114 &5017268356175793776
 MonoBehaviour:

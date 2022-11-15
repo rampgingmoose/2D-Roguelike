@@ -22,13 +22,17 @@ public class WeaponDetailsSO : ScriptableObject
     [Header("WEAPON CONFIGURATION")]
     #endregion Header WEAPON CONFIGURATION
     #region Tooltip
-    [Tooltip("Weapon Shoot Position - the offset posiiotn for the end of the weapon from the sprite pivot point")]
+    [Tooltip("Weapon Shoot Position - the offset position for the end of the weapon from the sprite pivot point")]
     #endregion Tooltip
     public Vector3 weaponShootPosition;
     #region Tooltip
     [Tooltip("Weapon current ammo")]
     public AmmoDetailsSO weaponCurrentAmmo;
     #endregion
+    #region Tooltip
+    [Tooltip("Weapon shoot effect SO - contains particle effect parameters to be used in conjunction with the weaponShootEffectPrefab")]
+    #endregion
+    public WeaponShootEffectSO weaponShootEffectSO;
     #region
     [Tooltip("The firing Sound effect SO for the weapon")]
     #endregion

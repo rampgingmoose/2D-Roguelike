@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a345607d880ae774882a43599f8ca3a2
+guid: b343a991d31b6074e9cbda75a235784d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,34 +128,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Smoke Trail Test_0
+      name: Explosion Effect_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 10
-        height: 16
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4bc362c4484d104b8863083c7d4ca46
-      internalID: -2126528661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Smoke Trail Test_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 0
-        width: 9
-        height: 16
+        x: 2
+        y: 62
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +142,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c2c718f5397c84f8112027a840563b
-      internalID: -1461350029
+      spriteID: 2d3b9e4fba0b24c40b38df1582be76f5
+      internalID: -458182735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Smoke Trail Test_2
+      name: Explosion Effect_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 57
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fc9a646e953ed468bc441901d4008c
+      internalID: 766742118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_2
       rect:
         serializedVersion: 2
         x: 36
-        y: 0
-        width: 8
-        height: 16
+        y: 52
+        width: 24
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,8 +184,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1760420ecd6b54bb33ea6939a3f2b8
-      internalID: -836615348
+      spriteID: 3a2d3ade630d9eb47a4405cc5e4ffbe5
+      internalID: -1417771081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_3
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 47
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a201030c4879204baf6e55100f6ae50
+      internalID: 1853652177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 48
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9275f297bbf615b4ca009aaac1b40806
+      internalID: 1725456558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a2ebf4c08ae0c49bc79448dca2a8ec
+      internalID: 649016423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 16
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db5ae7b5eb9d0d419e101a7cba82180
+      internalID: 592393642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 19
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a135f45aa1598344c9ce0bc4b9cedc9a
+      internalID: -1820531393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explosion Effect_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 33
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba40683c7e28c04eb5c5faa06b5fa8f
+      internalID: -28145164
       vertices: []
       indices: 
       edges: []
@@ -193,7 +319,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a20ec92461860df45ba4167430b29452
     internalID: 0
     vertices: []
     indices: 
@@ -201,9 +327,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Smoke Trail Test_0: -2126528661
-      Smoke Trail Test_2: -836615348
-      Smoke Trail Test_1: -1461350029
+      Explosion Effect_1: 766742118
+      Explosion Effect_6: 592393642
+      Explosion Effect_3: 1853652177
+      Explosion Effect_4: 1725456558
+      Explosion Effect_0: -458182735
+      Explosion Effect_2: -1417771081
+      Explosion Effect_5: 649016423
+      Explosion Effect_9: -28145164
+      Explosion Effect_7: -1820531393
+      Explosion Effect_10: 804528770
+      Explosion Effect_8: -1471624222
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

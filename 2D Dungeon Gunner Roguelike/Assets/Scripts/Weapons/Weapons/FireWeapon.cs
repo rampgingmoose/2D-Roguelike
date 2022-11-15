@@ -12,6 +12,7 @@ public class FireWeapon : MonoBehaviour
     private float firePrechargeTimer = 0f;
     private float fireRateCoolDownTimer = 0f;
     private ActiveWeapon activeWeapon;
+    private AimWeapon aimWeapon;
     private FireWeaponEvent fireWeaponEvent;
     private WeaponFiredEvent weaponFiredEvent;
     private ReloadWeaponEvent reloadWeaponEvent;
@@ -19,6 +20,7 @@ public class FireWeapon : MonoBehaviour
     private void Awake()
     {
         activeWeapon = GetComponent<ActiveWeapon>();
+        aimWeapon = GetComponent<AimWeapon>();
         fireWeaponEvent = GetComponent<FireWeaponEvent>();
         weaponFiredEvent = GetComponent<WeaponFiredEvent>();
         reloadWeaponEvent = GetComponent<ReloadWeaponEvent>();
@@ -180,6 +182,8 @@ public class FireWeapon : MonoBehaviour
         //Call weapon fired event
         weaponFiredEvent.CallWeaponFiredEvent(activeWeapon.GetCurrentWeapon());
 
+        WeaponShootEffectMethod(aimAngle);
+
         WeaponSoundEffect();
     }
 
@@ -192,6 +196,25 @@ public class FireWeapon : MonoBehaviour
     {
         //Reset precharge timer
         firePrechargeTimer = activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponPrechargeTime;
+    }
+
+    private void WeaponShootEffectMethod(float aimAngle)
+    {
+        //Process if there is a shoot effect & prefab
+        if(activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponShootEffectSO != null && activeWeapon.GetCurrentWeapon().
+            weaponDetailsSO.weaponShootEffectSO.weaponShootEffectPrefab != null)
+        {
+            //Get weapon shoot effect gameobject from the pool with particle system component
+            WeaponShootEffect weaponShootEffect = (WeaponShootEffect)PoolManager.Instance.ReuseComponent(activeWeapon.
+                GetCurrentWeapon().weaponDetailsSO.weaponShootEffectSO.weaponShootEffectPrefab,
+                activeWeapon.GetShootEffectPosition(), Quaternion.identity);
+
+            //Set shoot effect
+            weaponShootEffect.SetShootEffect(activeWeapon.GetCurrentWeapon().weaponDetailsSO.weaponShootEffectSO, aimAngle);
+
+            //Set gameobject active (the particle system is set to automatically disable the gameobject once finished
+            weaponShootEffect.gameObject.SetActive(true);
+        }
     }
 
     private void WeaponSoundEffect()
