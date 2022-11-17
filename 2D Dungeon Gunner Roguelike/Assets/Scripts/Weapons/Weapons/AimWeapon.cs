@@ -8,7 +8,7 @@ public class AimWeapon : MonoBehaviour
     #region Tooltip
     [Tooltip("Populate with the Transform from the child WeaponRotationPoint gameObject")]
     #endregion
-    [SerializeField] private Transform weaponRotationPoinTransform;
+    [SerializeField] private Transform weaponRotationPointTransform;
 
     private AimWeaponEvent aimWeaponEvent;
 
@@ -43,21 +43,21 @@ public class AimWeapon : MonoBehaviour
     private void Aim(AimDirection aimDirection, float aimAngle)
     {
         //Set the angle of the weapon transform
-        weaponRotationPoinTransform.eulerAngles = new Vector3(0f, 0f, aimAngle);
+        weaponRotationPointTransform.eulerAngles = new Vector3(0f, 0f, aimAngle);
 
         //Flip weapon transform based on player direction
         switch (aimDirection)
         {
             case AimDirection.Left:
             case AimDirection.UpLeft:
-                weaponRotationPoinTransform.localScale = new Vector3(1f, -1f, 0f);
+                weaponRotationPointTransform.localScale = new Vector3(1f, -1f, 0f);
                 break;
 
             case AimDirection.Up:
             case AimDirection.Right:
             case AimDirection.UpRight:
             case AimDirection.Down:
-                weaponRotationPoinTransform.localScale = new Vector3(1f, 1f, 0f);
+                weaponRotationPointTransform.localScale = new Vector3(1f, 1f, 0f);
                 break;
 
             default:
@@ -69,7 +69,7 @@ public class AimWeapon : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        HelperUtilities.ValidateCheckNullValue(this, nameof(weaponRotationPoinTransform), weaponRotationPoinTransform);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(weaponRotationPointTransform), weaponRotationPointTransform);
     }
 #endif
     #endregion

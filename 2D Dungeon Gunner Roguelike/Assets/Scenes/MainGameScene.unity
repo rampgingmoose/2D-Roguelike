@@ -1280,7 +1280,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.9997038
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -2254,6 +2254,27 @@ MonoBehaviour:
   - poolSize: 20
     prefab: {fileID: 1400626622128199812, guid: 46b8d89f3687732438358976bf41f0a9, type: 3}
     componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: 0978912d084be924e8bf5d9ccf2665af, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: 038055e224e8d5843a34a6ad43f5ed0d, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: e0224c86c9096e24d8ed238d29b67bd6, type: 3}
+    componentType: WeaponShootEffect
+  - poolSize: 30
+    prefab: {fileID: 1400626622128199812, guid: b18e4d02e4f73e84f8d297095a17c5f1, type: 3}
+    componentType: AmmoHitEffect
+  - poolSize: 10
+    prefab: {fileID: 1400626622128199812, guid: 123abd7339df138419630bd6d56c1f25, type: 3}
+    componentType: AmmoHitEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: efc70749bf5e10e4bb14a057fcdfe30f, type: 3}
+    componentType: AmmoHitEffect
+  - poolSize: 20
+    prefab: {fileID: 1400626622128199812, guid: a41e2ccb1e23c9d4ca545045f316f82e, type: 3}
+    componentType: AmmoHitEffect
 --- !u!4 &1357968470
 Transform:
   m_ObjectHideFlags: 0

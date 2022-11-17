@@ -19,10 +19,6 @@ public class ActiveWeapon : MonoBehaviour
     #endregion
     [SerializeField] private Transform weaponShootPositionTransform;
     #region Tooltip
-    [Tooltip("Populate with the Transform on the WeaponRotationPoint")]
-    #endregion
-    [SerializeField] public Transform weaponRotationPoint;
-    #region
     [Tooltip("Populate with the Transform on the WeaponEffectPositionTransform")]
     #endregion
     [SerializeField] private Transform weaponEffectPositionTransform;

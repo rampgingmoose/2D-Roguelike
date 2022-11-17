@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3153a93bd753a5f4c92bc3e0c098ed88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponRotationPoinTransform: {fileID: 6616331621750296261}
+  weaponRotationPointTransform: {fileID: 6616331621750296261}
 --- !u!114 &619731728441150196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,7 +673,6 @@ MonoBehaviour:
   weaponSpriteRenderer: {fileID: 6616331621519564933}
   weaponPolgonCollider2D: {fileID: 6616331621519564938}
   weaponShootPositionTransform: {fileID: 8489323636364865838}
-  weaponRotationPoint: {fileID: 6616331621750296261}
   weaponEffectPositionTransform: {fileID: 605382912548930350}
 --- !u!114 &5017268356175793776
 MonoBehaviour:

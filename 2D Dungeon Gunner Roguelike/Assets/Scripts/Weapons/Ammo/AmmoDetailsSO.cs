@@ -42,6 +42,15 @@ public class AmmoDetailsSO : ScriptableObject
     #endregion
     public Material ammoChargeMaterial;
 
+    #region Header AMMO HIT EFFECT
+    [Space(10)]
+    [Header("AMMO HIT EFFECT")]
+    #endregion
+    #region Tooltip
+    [Tooltip("The scriptable object that deines the parameters for the hit effect prefab")]
+    #endregion
+    public AmmoHitEffectSO ammoHitEffectSO;
+
     #region Header AMMO BASE PARAMETERS
     [Space(10)]
     [Header("AMMO BASE PARAMETERS")]
@@ -115,6 +124,10 @@ public class AmmoDetailsSO : ScriptableObject
     [Tooltip("Selected if an ammo trail is required, otherwise deselect. If selected the the rest of the ammo trails values should be populated.")]
     #endregion
     public bool isAmmoTrail = false;
+    #region Tooltip
+    [Tooltip("Selected if a smoke trail is required otherwise deselect")]
+    #endregion
+    public bool isSmokeTrail = false;
     #region
     [Tooltip("Ammo trails lifetime in seconds")]
     #endregion
@@ -150,7 +163,7 @@ public class AmmoDetailsSO : ScriptableObject
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(ammoSpawnAmountMin), ammoSpawnAmountMin, 
             nameof(ammoSpawnAmountMax), ammoSpawnAmountMax, false);
         HelperUtilities.ValidateCheckPositiveRange(this, nameof(ammoSpawnIntervalMin), ammoSpawnIntervalMin,
-            nameof(ammoSpawnIntervalMax), ammoSpawnIntervalMax, false);
+            nameof(ammoSpawnIntervalMax), ammoSpawnIntervalMax, true);
         if (isAmmoTrail)
         {
             HelperUtilities.ValidateCheckPositiveValue(this, nameof(ammoTrailTime), ammoTrailTime, false);

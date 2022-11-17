@@ -7,6 +7,9 @@ public class WeaponShootEffect : MonoBehaviour
 {
     private ParticleSystem shootEffectParticleSystem;
 
+    private Vector3 fireDirectionVector;
+    private float fireDirectionAngle;
+
     private void Awake()
     {
         shootEffectParticleSystem = GetComponent<ParticleSystem>();
@@ -81,7 +84,13 @@ public class WeaponShootEffect : MonoBehaviour
 
     private void SetEmitterRotation(float aimAngle)
     {
-        //transform.eulerAngles = new Vector3(0f, 0f, aimAngle);
+        
+
+        fireDirectionAngle = aimAngle;
+
+        transform.eulerAngles = new Vector3(0f, 0f, fireDirectionAngle);
+
+        fireDirectionVector = HelperUtilities.GetDirectionVectorFromAngle(fireDirectionAngle);
     }
 
     private void SetShootEffectVelocityOverLifetime(Vector3 velocityOverLifetimeMin, Vector3 velocityOverLifetimeMax)

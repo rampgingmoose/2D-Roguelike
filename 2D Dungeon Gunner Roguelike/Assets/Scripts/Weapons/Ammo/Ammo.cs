@@ -9,6 +9,7 @@ public class Ammo : MonoBehaviour, IFireable
     [Tooltip("Populate with child TrailRenderer component")]
     #endregion
     [SerializeField] TrailRenderer trailRenderer;
+    [SerializeField] ParticleSystem smokeTrailParticles;
 
     private float ammoRange = 0f; // the range of each ammo
     private float ammoSpeed;
@@ -55,6 +56,11 @@ public class Ammo : MonoBehaviour, IFireable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (ammoDetailsSO.isSmokeTrail)
+        {
+            DetachSmokeParticles();
+        }
+        EnableAmmoHitEffect();
         DisableAmmo();
     }
     /// <summary>
@@ -98,6 +104,7 @@ public class Ammo : MonoBehaviour, IFireable
 
         //Activate ammo gameobject
         gameObject.SetActive(true);
+
         #endregion
 
         #region AmmoTrail
@@ -118,6 +125,20 @@ public class Ammo : MonoBehaviour, IFireable
         }
 
         #endregion
+
+        if (ammoDetails.isSmokeTrail)
+        {
+            if (smokeTrailParticles != null && smokeTrailParticles.transform.parent == null)
+            {
+                smokeTrailParticles.transform.SetParent(transform, true);
+                smokeTrailParticles.transform.position = transform.position;
+                smokeTrailParticles.gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            smokeTrailParticles.gameObject.SetActive(false);
+        }        
     }
 
     /// <summary>
@@ -156,6 +177,39 @@ public class Ammo : MonoBehaviour, IFireable
     private void DisableAmmo()
     {
         gameObject.SetActive(false);
+    }
+
+    private void AttachSmokeParticles()
+    {
+        if(smokeTrailParticles != null && smokeTrailParticles.transform.parent == null)
+        {
+            
+        }
+    }
+
+    private void DetachSmokeParticles()
+    {
+        if(smokeTrailParticles != null)
+        {
+            smokeTrailParticles.transform.parent = null;
+            smokeTrailParticles.Stop();
+        }
+    }
+
+    private void EnableAmmoHitEffect()
+    {
+        if(ammoDetailsSO.ammoHitEffectSO != null && ammoDetailsSO.ammoHitEffectSO.ammoHitEffectPrefab != null)
+        {
+            //Get Ammo Hit Effect gameobject from the pool (with particle system component)
+            AmmoHitEffect ammoHitEffect = (AmmoHitEffect)PoolManager.Instance.ReuseComponent(ammoDetailsSO.ammoHitEffectSO.ammoHitEffectPrefab,
+                transform.position, Quaternion.identity);
+
+            //Set Hit Effect
+            ammoHitEffect.SetHitEffect(ammoDetailsSO.ammoHitEffectSO);
+
+            //Set gameobject active (the particle system is set to automatically disable the gameobject once finished)
+            ammoHitEffect.gameObject.SetActive(true);
+        }
     }
 
     public void SetAmmoMaterial(Material material)

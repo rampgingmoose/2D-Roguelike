@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1400626622128199835}
-  - component: {fileID: -4710438504703748207}
+  - component: {fileID: 9155088827106621934}
   - component: {fileID: 1400626622128199834}
   - component: {fileID: 1400626622128199813}
   m_Layer: 0
-  m_Name: Gun fire Particles
+  m_Name: Ammo Hit Effect Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4710438504703748207
+--- !u!114 &9155088827106621934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1400626622128199812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1bd2e06e31c66b48bf0ee198dd43713, type: 3}
+  m_Script: {fileID: 11500000, guid: d4bcbb549cd91504db5708d69fecc246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &1400626622128199834
@@ -129,7 +129,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1553,10 +1553,11 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -390473833, guid: c1fe2b4f5d56430469f76e377a10d496, type: 3}
-    - sprite: {fileID: -565962950, guid: c1fe2b4f5d56430469f76e377a10d496, type: 3}
-    - sprite: {fileID: 1982464668, guid: c1fe2b4f5d56430469f76e377a10d496, type: 3}
-    - sprite: {fileID: -1014548865, guid: c1fe2b4f5d56430469f76e377a10d496, type: 3}
+    - sprite: {fileID: 735744, guid: 30e27cd5df170824b84274abf0b6a8e0, type: 3}
+    - sprite: {fileID: -237506929, guid: 30e27cd5df170824b84274abf0b6a8e0, type: 3}
+    - sprite: {fileID: -900494412, guid: 30e27cd5df170824b84274abf0b6a8e0, type: 3}
+    - sprite: {fileID: 276816860, guid: 30e27cd5df170824b84274abf0b6a8e0, type: 3}
+    - sprite: {fileID: 1057348668, guid: 30e27cd5df170824b84274abf0b6a8e0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -4835,7 +4836,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 29b26eefebc5ec244b2b942c431b7f07, type: 2}
+  - {fileID: 2100000, guid: 6f2b97540fc06164c932cb2bfc0db6de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4867,7 +4868,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 2
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
