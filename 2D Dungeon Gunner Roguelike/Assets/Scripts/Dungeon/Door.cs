@@ -18,7 +18,7 @@ public class Door : MonoBehaviour
 
     public bool isBossRoomDoor = false;
     private BoxCollider2D doorTrigger;
-    private bool isOpen = false;
+    [SerializeField] private bool isOpen = false;
     private bool previouslyOpened = false;
     private Animator animator;
 

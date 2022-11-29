@@ -16,6 +16,7 @@ public class InstantiatedRoom : MonoBehaviour
     [HideInInspector] public Tilemap collisionTilemap;
     [HideInInspector] public Tilemap minimapTilemap;
     [HideInInspector] public Bounds roomColliderBounds;
+    [HideInInspector] public int[,] aStarMovementPenalty; // use this 2d array to store movement penalties from the tilemaps to be used in AStar pathfinding
 
     private BoxCollider2D boxCollider2D;
 
@@ -46,6 +47,8 @@ public class InstantiatedRoom : MonoBehaviour
         PopulateTilemapMemberVariable(roomGameObject);
 
         BlockOffUnusedDoorways();
+
+        AddObstaclesAndPreferredPaths();
 
         AddDoorsToRooms();
 
@@ -205,6 +208,44 @@ public class InstantiatedRoom : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// update obstacles used by AStar pathfinding
+    /// </summary>
+    private void AddObstaclesAndPreferredPaths()
+    {
+        //this array will be populated with wall obstacles
+        aStarMovementPenalty = new int[room.templateUpperBounds.x - room.templateLowerBounds.x + 1, 
+            room.templateUpperBounds.y - room.templateLowerBounds.y + 1];
+
+        for (int x = 0; x < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); x++)
+        {
+            for (int y = 0; y < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); y++)
+            {
+                //Set default movement penalty for grid squares
+                aStarMovementPenalty[x, y] = Settings.defaultAStarMovementPenalty;
+
+                //Add obstacles for collision tiles the enemy can't walk on
+                TileBase tile = collisionTilemap.GetTile(new Vector3Int(x + room.templateLowerBounds.x, y + room.templateLowerBounds.y, 0));
+                
+                foreach(TileBase collisionTile in GameResources.Instance.enemyUnwalkableCollisionTilesArray)
+                {
+                    if (tile == collisionTile)
+                    {
+                        aStarMovementPenalty[x, y] = 0;
+                        break;
+                    }
+                }
+
+                //Add preferred path for enemies (1 is the preferred path value, default value for
+                //a grid location is specified in the Settings script.
+                if (tile == GameResources.Instance.preferredEnemyPathTiles)
+                {
+                    aStarMovementPenalty[x, y] = Settings.preferredPathAStarMovementPenalty;
+                }
+            }
+        }
+    }
+
     //<summary>
     //Add opening doors if this is not a corridor room
     //<summary>
@@ -263,5 +304,60 @@ public class InstantiatedRoom : MonoBehaviour
     private void DisableCollisionTilemapRenderer()
     {
         collisionTilemap.gameObject.GetComponent<TilemapRenderer>().enabled = false;
+    }
+
+    /// <summary>
+    /// Disable the room trigger collider that is used to trigger when the player enters a room
+    /// </summary>
+    private void DisableRoomCollider()
+    {
+        boxCollider2D.enabled = false;
+    }
+
+    /// <summary>
+    /// Enable the room trigger collider that is used when the player enters a room
+    /// </summary>
+    private void EnableRoomCollider()
+    {
+        boxCollider2D.enabled = true;
+    }
+
+    /// <summary>
+    /// Lock the room doors
+    /// </summary>
+    public void LockDoors()
+    {
+        Door[] doorArray = GetComponentsInChildren<Door>();
+
+        //Trigger lock doors
+        foreach(Door door in doorArray)
+        {
+            door.LockDoor();
+        }
+
+        //Disable room trigger collider
+        DisableRoomCollider();
+    }
+
+    public void UnlockDoors(float doorUnlockDelay)
+    {
+        StartCoroutine(UnlockDoorsRoutine(doorUnlockDelay));
+    }
+
+    private IEnumerator UnlockDoorsRoutine(float doorUnlockDelay)
+    {
+        if (doorUnlockDelay > 0f)
+            yield return new WaitForSeconds(doorUnlockDelay);
+
+        Door[] doorArray = GetComponentsInChildren<Door>();
+
+        //Trigger UnlockDoors
+        foreach (Door door in doorArray)
+        {
+            door.UnlockDoor();
+        }
+
+        //Enable room trigger Collider
+        EnableRoomCollider();
     }
 }

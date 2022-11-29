@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6231747551271288006, guid: e038b425f64113140b5a86fa1081adae, type: 3}
+      propertyPath: contactDamageAmount
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6616331621519564938, guid: e038b425f64113140b5a86fa1081adae, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.18444446
@@ -166,6 +170,10 @@ PrefabInstance:
     - target: {fileID: 8525758350957150728, guid: e038b425f64113140b5a86fa1081adae, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032243914627611339, guid: e038b425f64113140b5a86fa1081adae, type: 3}
+      propertyPath: contactDamageAmount
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e038b425f64113140b5a86fa1081adae, type: 3}

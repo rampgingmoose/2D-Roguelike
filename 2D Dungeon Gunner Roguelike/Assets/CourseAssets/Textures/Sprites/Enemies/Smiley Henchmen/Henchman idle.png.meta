@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a036819e6f27a434fa5143329c92b9ac
+guid: 406136ece7040734da6c570956da6a79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,358 +128,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dr smiles henchman idle_0
+      name: Henchman idle_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 97
+        x: 0
+        y: 32
         width: 26
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05a009d6e1ed1df41b4b6a37e45ac481
-      internalID: 1728197269
+      spriteID: 4d01c2bd4301f424f99e6adab0309437
+      internalID: 1769882472
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_1
+      name: Henchman idle_1
       rect:
         serializedVersion: 2
-        x: 30
-        y: 97
+        x: 28
+        y: 32
         width: 26
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65390b1d5d7db264ea57d41ce9cb349b
-      internalID: 1700869811
+      spriteID: 74901acc24ef78946b442e5eb05b6ce6
+      internalID: 791643548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_2
+      name: Henchman idle_2
       rect:
         serializedVersion: 2
-        x: 59
-        y: 97
-        width: 26
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9a0ea990e66d73479a26ef677743dd0
-      internalID: -1601470446
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 97
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54bc094ce5b747b4b8fe6ef968ba5d9a
-      internalID: -942622082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_4
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 66
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 398308863ace5684ea770f5bd91789b0
-      internalID: 1242484095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_5
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 66
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: efd7de4a8aad093449f937bf98917a1e
-      internalID: -37092493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_6
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 66
-        width: 26
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b1c2b8c1d9a4df429a5a6e2641607d7
-      internalID: 1692885752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_7
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 66
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c84e8ca42fd40ab428a83b59ab63a5ec
-      internalID: 1707438654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_8
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 35
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84dc28e7229e5294295186fd1f6b3586
-      internalID: -1410147423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_9
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 35
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af9900b9e9286a6439d0226a8e00c556
-      internalID: 707468939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_10
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 35
+        x: 58
+        y: 32
         width: 26
         height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c57ab85bbec1344eb2bcb2c6cc130a7
-      internalID: 2026958835
+      spriteID: c4e7514011a20e3418df79c21572715a
+      internalID: -1021093095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_11
+      name: Henchman idle_3
       rect:
         serializedVersion: 2
-        x: 90
-        y: 35
+        x: 88
+        y: 32
         width: 26
         height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 853afc21cdb7cb649884f1793ef2755e
-      internalID: -49211558
+      spriteID: 47cf3423bbcdcd441be18d26c7dd0b14
+      internalID: -1249046778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_12
+      name: Henchman idle_4
       rect:
         serializedVersion: 2
-        x: 120
-        y: 39
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d58ae86c8a9da474d8b2f4ffe4154d1f
-      internalID: -1071408290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_13
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 3
+        x: 116
+        y: 32
         width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e28bf1eb8761b57468c052bc3d2e3170
-      internalID: -103559101
+      spriteID: 722ce6e61002d9748a3de36795212dd8
+      internalID: 1527473291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_14
+      name: Henchman idle_5
       rect:
         serializedVersion: 2
-        x: 30
-        y: 3
-        width: 26
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce9be9fef983ca245aee837d91618ad0
-      internalID: 579785635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dr smiles henchman idle_15
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 3
+        x: 143
+        y: 32
         width: 26
         height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53c8e7e1ffdcb7f4fa93b868ad0816d7
-      internalID: -1226210465
+      spriteID: dc24492ad85dd7341ae0896ce6ff9e15
+      internalID: -73684769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dr smiles henchman idle_16
+      name: Henchman idle_6
       rect:
         serializedVersion: 2
-        x: 90
-        y: 3
+        x: 0
+        y: 0
         width: 26
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c76f0cde3e733f42b94938ed3d7cf72
-      internalID: -161866009
+      spriteID: b10d664f5e1e2e54e92459975644417d
+      internalID: 1116461593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henchman idle_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 26
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd6f472dbae3e847ba057c4675a09d8
+      internalID: 1032606082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henchman idle_8
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 26
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3dfc4d8e45022140b43b7605a4f9cd2
+      internalID: 1375267655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henchman idle_9
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 26
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9738e54ea135f234f83dcb93e4ac0e18
+      internalID: 1150938050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henchman idle_10
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 0
+        width: 26
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6ad18451431eb45bbc16fcdda747c5
+      internalID: 410331162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Henchman idle_11
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 26
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3287cc68b5ed2b64681a1373021996d8
+      internalID: -637211198
       vertices: []
       indices: 
       edges: []
@@ -487,7 +382,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1b3688df4b935a744abe5d0d155eb8ba
+    spriteID: 91397ecb165f27b4d8868fc1a1f6c0d3
     internalID: 0
     vertices: []
     indices: 
@@ -495,23 +390,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dr smiles henchman idle_1: 1700869811
-      dr smiles henchman idle_7: 1707438654
-      dr smiles henchman idle_5: -37092493
-      dr smiles henchman idle_10: 2026958835
-      dr smiles henchman idle_9: 707468939
-      dr smiles henchman idle_14: 579785635
-      dr smiles henchman idle_15: -1226210465
-      dr smiles henchman idle_16: -161866009
-      dr smiles henchman idle_6: 1692885752
-      dr smiles henchman idle_13: -103559101
-      dr smiles henchman idle_11: -49211558
-      dr smiles henchman idle_0: 1728197269
-      dr smiles henchman idle_12: -1071408290
-      dr smiles henchman idle_8: -1410147423
-      dr smiles henchman idle_2: -1601470446
-      dr smiles henchman idle_3: -942622082
-      dr smiles henchman idle_4: 1242484095
+      Henchman idle_6: 1116461593
+      Henchman idle_4: 1527473291
+      Henchman idle_9: 1150938050
+      Henchman idle_7: 1032606082
+      Henchman idle_3: -1249046778
+      Henchman idle_5: -73684769
+      Henchman idle_2: -1021093095
+      Henchman idle_1: 791643548
+      Henchman idle_8: 1375267655
+      Henchman idle_10: 410331162
+      Henchman idle_0: 1769882472
+      Henchman idle_11: -637211198
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

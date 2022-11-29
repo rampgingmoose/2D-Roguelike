@@ -15,7 +15,9 @@ MonoBehaviour:
   playerCharacterName: The SteamPunk
   playerPrefab: {fileID: 1287665670484227345, guid: 46647ada30c018d48a0be23ddbdc25f6, type: 3}
   runtimeAnimatorController: {fileID: 9100000, guid: 5ab5f4adb112b614a933733fa452bbd3, type: 2}
-  playerHealthAmount: 100
+  playerHealthAmount: 120
+  isImmuneAfterHit: 1
+  hitImmunityTime: 2
   startingWeapon: {fileID: 11400000, guid: 5b81f84f14b5a8647bc8a4f7e5fa5f47, type: 2}
   startingWeaponList:
   - {fileID: 11400000, guid: 5b81f84f14b5a8647bc8a4f7e5fa5f47, type: 2}

@@ -10,6 +10,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(PolygonCollider2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(HealthEvent))]
 [RequireComponent (typeof(Health))]
 [RequireComponent (typeof(PlayerControl))]
 [RequireComponent(typeof(AnimatePlayer))]
@@ -29,13 +30,19 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(MovementByVelocityEvent))]
 [RequireComponent(typeof(MovementToPosition))]
 [RequireComponent(typeof(MovementToPositionEvent))]
+[RequireComponent(typeof(DestroyedEvent))]
+[RequireComponent(typeof(Destroyed))]
+[RequireComponent(typeof(DealContactDamage))]
+[RequireComponent(typeof(RecieveContactDamage))]
 [DisallowMultipleComponent]
 #endregion REQUIRE COMPONENTS
 
 public class Player : MonoBehaviour
 {
     public PlayerDetailsSO playerDetails;
+    public PlayerControl playerControl;
     public Health health;
+    public HealthEvent healthEvent;
     public IdleEvent idleEvent;
     public AimWeaponEvent aimWeaponEvent;
     public FireWeaponEvent fireWeaponEvent;
@@ -48,13 +55,17 @@ public class Player : MonoBehaviour
     public MovementToPositionEvent movementToPositionEvent;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
+    public DestroyedEvent destroyedEvent;
 
     public List<Weapon> weaponList = new List<Weapon>();
 
     private void Awake()
     {
         //Load components
+        playerControl = GetComponent<PlayerControl>();
         health = GetComponent<Health>();
+        healthEvent = GetComponent<HealthEvent>();
+        destroyedEvent = GetComponent<DestroyedEvent>();
         idleEvent = GetComponent<IdleEvent>();
         aimWeaponEvent = GetComponent<AimWeaponEvent>();
         fireWeaponEvent= GetComponent<FireWeaponEvent>();
@@ -78,6 +89,28 @@ public class Player : MonoBehaviour
         CreatePlayerStartingWeapons();
     }
 
+    private void OnEnable()
+    {
+        healthEvent.OnHealthChanged += HealthEvent_OnHealthChanged;
+    }
+
+    private void OnDisable()
+    {
+        healthEvent.OnHealthChanged -= HealthEvent_OnHealthChanged;
+    }
+
+    /// <summary>
+    /// Handle health changed event
+    /// </summary>
+    private void HealthEvent_OnHealthChanged(HealthEvent healthEvent, HealthEventArgs healthEventArgs)
+    {
+        //If player has died
+        if(healthEventArgs.healthAmount <= 0f)
+        {
+            destroyedEvent.CallDestroyedEvent(true);
+        }
+    }
+
     //<summary>
     //Set Player Health from PlayerDetailsSO
     //<summary>
@@ -86,6 +119,13 @@ public class Player : MonoBehaviour
         health.SetStartingHealth(playerDetails.playerHealthAmount);
     }
 
+    /// <summary>
+    /// returns the player position
+    /// </summary>
+    public Vector3 GetPlayerPosition()
+    {
+        return transform.position;
+    }
     private void CreatePlayerStartingWeapons()
     {
         weaponList.Clear();

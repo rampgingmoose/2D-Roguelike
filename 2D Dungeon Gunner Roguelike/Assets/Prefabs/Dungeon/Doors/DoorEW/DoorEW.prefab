@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7927444}
+  m_Offset: {x: -0.18201125, y: -0.7927444}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.875, y: 0}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 7.9541755}
+  m_Size: {x: 1.123884, y: 7.9541755}
   m_EdgeRadius: 0
 --- !u!114 &-3657638540365872127
 MonoBehaviour:
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorCollider: {fileID: 8157566201640632162}
   isBossRoomDoor: 0
+  isOpen: 0
 --- !u!1 &6369518024247564742
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +231,7 @@ GameObject:
   - component: {fileID: 1013788715379568348}
   - component: {fileID: 4382026070871397520}
   - component: {fileID: 8157566201640632162}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DoorCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +319,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.75, y: 2.7}
+  m_Offset: {x: -0.8900086, y: 2.6999998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.875, y: 0}
@@ -329,5 +330,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 8.5}
+  m_Size: {x: 2.0999131, y: 8.5}
   m_EdgeRadius: 0

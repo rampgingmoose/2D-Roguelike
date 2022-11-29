@@ -24,6 +24,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     private Player player;
 
     [HideInInspector] public GameState gameState;
+    [HideInInspector] public GameState previousGameState;
 
     protected override void Awake()
     {
@@ -55,6 +56,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
     private void Start()
     {
+        previousGameState = GameState.gameStarted;
         gameState = GameState.gameStarted;
     }
 
@@ -63,10 +65,10 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         HandleGameState();
 
         //For testing
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            gameState = GameState.gameStarted;
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    gameState = GameState.gameStarted;
+        //}
     }
 
     private void InstantiatePlayer()
@@ -135,6 +137,11 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     public Sprite GetPlayerMiniMapIcon()
     {
         return playerDetails.playerMiniMapIcon;
+    }
+
+    public DungeonLevelSO GetCurrentDungeonLevel()
+    {
+        return dungeonLevelList[currentDungeonLevelListIndex];
     }
 
     #region Validation

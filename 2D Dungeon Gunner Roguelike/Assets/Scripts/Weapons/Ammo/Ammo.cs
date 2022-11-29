@@ -20,6 +20,7 @@ public class Ammo : MonoBehaviour, IFireable
     private float ammoChargeTimer;
     private bool isAmmoMaterialSet = false;
     private bool overrideAmmoMovement = false;
+    private bool isColliding = false;
 
     private void Awake()
     {
@@ -50,19 +51,58 @@ public class Ammo : MonoBehaviour, IFireable
 
         if(ammoRange <= 0f)
         {
+            //detach smoke trail child component so the particle effect can fade on its own once finished
+            if (ammoDetailsSO.isSmokeTrail)
+            {
+                DetachSmokeParticles();
+            }
+
             DisableAmmo();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        PlayerControl playerControl = collision.gameObject.GetComponent<PlayerControl>();
+
+        //detach smoke trail child component so the particle effect can fade on its own once finished
         if (ammoDetailsSO.isSmokeTrail)
         {
             DetachSmokeParticles();
         }
-        EnableAmmoHitEffect();
-        DisableAmmo();
+
+        //If already colliding with something return
+        if (isColliding) return;
+
+        //Deal damage To Collision Object
+        DealDamage(collision);
+
+        if (playerControl != null && playerControl.isPlayerRolling)
+        {
+            return;
+        }
+        else
+        {
+            //Show ammo hit effect
+            EnableAmmoHitEffect();
+
+            DisableAmmo();
+        }
     }
+
+    private void DealDamage(Collider2D collision)
+    {
+        Health health = collision.GetComponent<Health>();
+
+        if (health != null)
+        {
+            //Set isColliding to prevent ammo dealing damage multiple times
+            isColliding = true;
+
+            health.TakeDamage(ammoDetailsSO.ammoDamage);
+        }
+    }
+
     /// <summary>
     /// Initialize the ammo being fired - using the ammoDetails, the aimangle, weaponAngle, and weaponOverrideDirectionVector.
     /// If this ammo is part of a pattern the ammo movement can be overriden by setting overrideAmmoMovement to true
@@ -71,6 +111,9 @@ public class Ammo : MonoBehaviour, IFireable
     {
         #region Ammo
         this.ammoDetailsSO = ammoDetails;
+
+        //Initialize isColliding
+        isColliding = false;
 
         //Set Fire Direction
         SetFireDirection(ammoDetails, aimAngle, weaponAimAngle, weaponAimDirectionVector);
@@ -177,14 +220,6 @@ public class Ammo : MonoBehaviour, IFireable
     private void DisableAmmo()
     {
         gameObject.SetActive(false);
-    }
-
-    private void AttachSmokeParticles()
-    {
-        if(smokeTrailParticles != null && smokeTrailParticles.transform.parent == null)
-        {
-            
-        }
     }
 
     private void DetachSmokeParticles()

@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour
     private float moveSpeed;
     private Coroutine playerRollCoroutine;
     private WaitForFixedUpdate waitForFixedUpdate;
-    private bool isPlayerRolling = false;
+    public bool isPlayerRolling = false;
     private float playerRollCoolDownTimer = 0f;
 
     private void Awake()
