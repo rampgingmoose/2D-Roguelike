@@ -7,9 +7,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 43148622910506455, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 43148622910506455, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 43148622910506455, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9cb2443aa9236fc4dbefe1f7dbee8855, type: 3}
+    - target: {fileID: 43148622910506455, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 786221806852773115, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786221806852773115, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -205,8 +221,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287356485461890982, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
       propertyPath: m_Name
-      value: Dr Smiles
+      value: DrSmiles
       objectReference: {fileID: 0}
+    - target: {fileID: 1618458018216685337, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618458018216685337, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618458018216685337, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9cb2443aa9236fc4dbefe1f7dbee8855, type: 3}
+    - target: {fileID: 1618458018216685337, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2311819712644800824, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d2415ab92b7630e42bc6befbe8ff8746, type: 2}
     - target: {fileID: 2922685569779688788, guid: 04bfa50c274841a4483e79f281d448dc, type: 3}
       propertyPath: m_Sprite
       value: 
