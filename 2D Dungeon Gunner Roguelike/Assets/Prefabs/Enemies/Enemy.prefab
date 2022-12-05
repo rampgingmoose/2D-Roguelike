@@ -575,6 +575,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  player: {fileID: 0}
+  enemy: {fileID: 0}
   isDamageable: 1
 --- !u!114 &8088639392698316975
 MonoBehaviour:

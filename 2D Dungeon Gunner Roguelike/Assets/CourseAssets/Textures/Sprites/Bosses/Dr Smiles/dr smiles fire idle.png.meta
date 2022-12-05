@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b59000f3474db314fba1bf045b293847
+guid: 9ecc1762c3bea2e4f810a65d63e78a0e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,148 +128,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dr smiles Idle_0
+      name: dr smiles fire idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 32
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a02512d4f7220f444acee0d1fc936109
-      internalID: 541601430
+      spriteID: 773dace3fc31f014a8a0c1c1e669e185
+      internalID: -1283020152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_1
+      name: dr smiles fire idle_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 53
         y: 0
-        width: 48
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 30
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38b0eccfe2638934988b3d9986d77fb5
-      internalID: -1681244124
+      spriteID: be020959036baec4c9230749406e746e
+      internalID: 694381063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_2
+      name: dr smiles fire idle_2
       rect:
         serializedVersion: 2
-        x: 104
+        x: 103
         y: 0
-        width: 48
-        height: 63
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 38
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf5e58bda18f32348b31f3fce524c7c9
-      internalID: 1748176603
+      spriteID: d311d36a990e29c4ab7b23b5e9db90c5
+      internalID: -941353492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_3
+      name: dr smiles fire idle_3
       rect:
         serializedVersion: 2
-        x: 159
+        x: 161
         y: 0
-        width: 48
-        height: 60
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 37
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 283caba70cf73f64cac1858daa55a5a6
-      internalID: -634445940
+      spriteID: e5e15aa120582414c91d0358e5e99816
+      internalID: 1216403222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_4
+      name: dr smiles fire idle_4
       rect:
         serializedVersion: 2
-        x: 213
+        x: 221
         y: 0
-        width: 48
-        height: 61
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 26
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de5d9591f8a73e44ac453e543ee22d4
-      internalID: -1198074240
+      spriteID: 1375a21b1b6024947896c518702d7c5f
+      internalID: 339573528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_5
+      name: dr smiles fire idle_5
       rect:
         serializedVersion: 2
-        x: 271
+        x: 277
         y: 0
-        width: 48
-        height: 63
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 31
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7700f43de7fff2345af98b0e6327fde7
-      internalID: -338033294
+      spriteID: 9a4978efaa6cd904ebc36e28bf7f525b
+      internalID: 998065490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dr smiles Idle_6
+      name: dr smiles fire idle_6
       rect:
         serializedVersion: 2
-        x: 328
+        x: 332
         y: 0
-        width: 48
-        height: 65
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 27
+        height: 40
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee7b641ff7669944ea30796733d6e2cb
-      internalID: -1907530612
+      spriteID: a885a8411f9b95643987699f40a806e1
+      internalID: 2037457520
       vertices: []
       indices: 
       edges: []
@@ -277,7 +277,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 017bd6e94c2bbc34b8862496d030c429
+    spriteID: 399796f1926e8a9489aca29e3eaa624a
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +285,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dr smiles Idle_6: -1907530612
-      Dr smiles Idle_4: -1198074240
-      Dr smiles Idle_1: -1681244124
-      Dr smiles Idle_2: 1748176603
-      Dr smiles Idle_5: -338033294
-      Dr smiles Idle_0: 541601430
-      Dr smiles Idle_3: -634445940
+      dr smiles fire idle_1: 694381063
+      dr smiles fire idle_4: 339573528
+      dr smiles fire idle_9: 910651833
+      dr smiles fire idle_0: -1283020152
+      dr smiles fire idle_2: -941353492
+      dr smiles fire idle_7: -1733473879
+      dr smiles fire idle_3: 1216403222
+      dr smiles fire idle_6: 2037457520
+      dr smiles fire idle_5: 998065490
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

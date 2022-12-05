@@ -19,6 +19,7 @@ public class PlayerControl : MonoBehaviour
     private WaitForFixedUpdate waitForFixedUpdate;
     public bool isPlayerRolling = false;
     private float playerRollCoolDownTimer = 0f;
+    private bool isPlayerMovementDisabled = false;
 
     private void Awake()
     {
@@ -58,6 +59,11 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        //If player movement disabled then return
+        if (isPlayerMovementDisabled)
+            return;
+
+        //If player is rolling then return
         if (isPlayerRolling) return;
 
         MovementInput();
@@ -382,6 +388,17 @@ public class PlayerControl : MonoBehaviour
 
             isPlayerRolling = false;
         }
+    }
+
+    public void EnablePlayer()
+    {
+        isPlayerMovementDisabled = false;
+    }
+
+    public void DisablePlayer()
+    {
+        isPlayerMovementDisabled = true;
+        player.idleEvent.CallIdleEvent();
     }
 
     #region Validation

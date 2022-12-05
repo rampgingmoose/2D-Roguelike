@@ -51,6 +51,11 @@ public class Ammo : MonoBehaviour, IFireable
 
         if(ammoRange <= 0f)
         {
+            if (ammoDetailsSO.isPlayerAmmo)
+            {
+                StaticEventsHandler.CallMultiplierEvent(false);
+            }
+
             //detach smoke trail child component so the particle effect can fade on its own once finished
             if (ammoDetailsSO.isSmokeTrail)
             {
@@ -94,12 +99,35 @@ public class Ammo : MonoBehaviour, IFireable
     {
         Health health = collision.GetComponent<Health>();
 
+        bool enemyHit = false;
+
         if (health != null)
         {
             //Set isColliding to prevent ammo dealing damage multiple times
             isColliding = true;
 
             health.TakeDamage(ammoDetailsSO.ammoDamage);
+
+            //Enemy Hit
+            if (health.enemy != null)
+            {
+                enemyHit = true;
+            }
+        }
+
+        //If player ammo then update multiplier
+        if (ammoDetailsSO.isPlayerAmmo)
+        {
+            if (enemyHit)
+            {
+                //multiplier
+                StaticEventsHandler.CallMultiplierEvent(true);
+            }
+            else
+            {
+                //no multiplier
+                StaticEventsHandler.CallMultiplierEvent(false);
+            }
         }
     }
 

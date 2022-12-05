@@ -11,6 +11,8 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
     private Room currentRoom;
     private RoomEnemySpawnParameters roomEnemySpawnParameters;
 
+    [SerializeField] private BossHealthBarUI bossHealthBar;
+
     private void OnEnable()
     {
         StaticEventsHandler.OnRoomChanged += StaticEventsHandler_OnRoomChanged;
@@ -36,7 +38,7 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
         }
 
         //If the room has already been cleared
-        if (currentRoom.isClearedofEnemies)
+        if (currentRoom.isClearedOfEnemies)
             return;
 
         //Get random number of enemies to spawn
@@ -48,7 +50,7 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
         if (enemiesToSpawn == 0)
         {
             //Mark the room as cleared
-            currentRoom.isClearedofEnemies = true;
+            currentRoom.isClearedOfEnemies = true;
             return;
         }
 
@@ -57,13 +59,23 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
 
         //Lock Doors
         currentRoom.instantiatedRoom.LockDoors();
+        
+        if (currentRoom.roomNodeType.isBossRoom)
+        {
+            bossHealthBar.EnableBossHealthBar();
+        }
 
         SpawnEnemies();
     }
 
     private void SpawnEnemies()
     {
-        if (GameManager.Instance.gameState == GameState.playingLevel)
+        if (GameManager.Instance.gameState == GameState.bossStage)
+        {
+            GameManager.Instance.previousGameState = GameState.bossStage;
+            GameManager.Instance.gameState = GameState.engagingBoss;
+        }
+        else if (GameManager.Instance.gameState == GameState.playingLevel)
         {
             GameManager.Instance.previousGameState = GameState.playingLevel;
             GameManager.Instance.gameState = GameState.engagingEnemies;
@@ -146,9 +158,11 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
         //reduce current enemy count
         currentEnemyCount--;
 
+        StaticEventsHandler.CallPointsScoredEvent(destroyedEventArgs.points);
+
         if (currentEnemyCount <= 0 && enemiesSpawnedSoFar == enemiesToSpawn)
         {
-            currentRoom.isClearedofEnemies = true;
+            currentRoom.isClearedOfEnemies = true;
 
             //Set gamestate
             if (GameManager.Instance.gameState == GameState.engagingEnemies)

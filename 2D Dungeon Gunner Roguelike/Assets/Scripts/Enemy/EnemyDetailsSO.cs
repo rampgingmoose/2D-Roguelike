@@ -99,12 +99,17 @@ public class EnemyDetailsSO : ScriptableObject
     #endregion
     public EnemyHealthDetails[] enemyHealthDetailsArray;
 
-    #region
+    #region Tooltip
     [Tooltip("Select if has immunity period immediately after hit. If so specify the immunity time in seconds in the other field")]
-    #endregion
+    #endregion Tooltip
     public bool isImmuneAfterHit = false;
 
     #region
+    [Tooltip("Select this if the enemy is a boss with a health bar that should be displayed on the UI")]
+    #endregion
+    public bool displayBossHealthBar = false;
+
+    #region Tooltip
     [Tooltip("Immunity time in seconds after being hit")]
     #endregion
     public float hitImmunityTime;

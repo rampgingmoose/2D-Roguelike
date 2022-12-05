@@ -24,6 +24,19 @@ public static class HelperUtilities
         return worldPosition;
     }
 
+    /// <summary>
+    /// Get the camera viewport lower and upper bounds
+    /// </summary>
+    public static void CameraWorldPositionBounds(out Vector2Int cameraWorldPositionLowerBounds, out Vector2Int cameraWorldPositionUpperBounds,
+        Camera camera)
+    {
+        Vector3 worldPositionViewportBottomLeft = camera.ViewportToWorldPoint(new Vector3(0f, 0f, 0f));
+        Vector3 worldPositionViewportUpperRight = camera.ViewportToWorldPoint(new Vector3(1f, 1f, 0f));
+
+        cameraWorldPositionLowerBounds = new Vector2Int((int)worldPositionViewportBottomLeft.x, (int)worldPositionViewportBottomLeft.y);
+        cameraWorldPositionUpperBounds = new Vector2Int((int)worldPositionViewportUpperRight.x, (int)worldPositionViewportUpperRight.y);
+    }
+
     //<summary>
     //Get the angle in degrees from a direction vector
     //<summary>

@@ -100,7 +100,6 @@ public class GameResources : MonoBehaviour
     #endregion
     public GameObject halfHeartImage;
 
-
     #region Validation
 #if UNITY_EDITOR
     //Validate the scriptable object details entered

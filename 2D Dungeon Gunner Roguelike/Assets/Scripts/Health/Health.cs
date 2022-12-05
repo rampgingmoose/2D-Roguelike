@@ -8,8 +8,8 @@ public class Health : MonoBehaviour
     private int startingHealth;
     public int currentHealth;
     private HealthEvent healthEvent;
-    private Player player;
-    private Enemy enemy;
+    public Player player;
+    public Enemy enemy;
 
     private Coroutine immunityCoroutine;
     private bool isImmuneAfterHit = false;
@@ -77,6 +77,12 @@ public class Health : MonoBehaviour
             CallHealthEvent(damageAmount);
 
             PostHitImmunity();
+
+            //Set health bar as the percentage of health remaining
+            if (GameManager.Instance.bossHealthBarUI != null)
+            {
+                GameManager.Instance.bossHealthBarUI.InitializeBossHealthBar((float)currentHealth / (float)startingHealth);
+            }
         }
     }
 
