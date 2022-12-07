@@ -73,7 +73,7 @@ public class ActiveWeapon : MonoBehaviour
     }
 
     public Weapon GetCurrentWeapon()
-    {
+    {       
         return currentWeapon;
     }
 

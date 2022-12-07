@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: WeaponDetails_CirclePattern_Enemy
   m_EditorClassIdentifier: 
   weaponName: Circle Pattern
-  weaponSprite: {fileID: 0}
+  weaponSprite: {fileID: 21300000, guid: bba254fadfd115f41921877e4e1d449f, type: 3}
   weaponShootPosition: {x: 0, y: 0, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 7ae09ca1ab2df284db4f4fa0d3c8a086, type: 2}
   weaponShootEffectSO: {fileID: 11400000, guid: 37b8cecd9868c69429825d4c1061c829, type: 2}
   weaponFiringSoundEffect: {fileID: 11400000, guid: c30f0ff57bd81f34b97721f3ea9c6fe9, type: 2}
-  weaponReloadingSoundEffect: {fileID: 0}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: d10317aa35c8e4c488e7bfc35b666dc3, type: 2}
   hasInfiniteAmmo: 1
   hasInfiniteClipCapacity: 1
   weaponClipCapacity: 0

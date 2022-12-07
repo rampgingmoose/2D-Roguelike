@@ -29,7 +29,7 @@ MonoBehaviour:
   ammoSpreadMin: 1
   ammoSpreadMax: 3
   ammoSpawnAmountMin: 1
-  ammoSpawnAmountMax: 1
+  ammoSpawnAmountMax: 3
   ammoSpawnIntervalMin: 0.1
   ammoSpawnIntervalMax: 0.1
   isAmmoTrail: 0

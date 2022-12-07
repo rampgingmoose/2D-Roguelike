@@ -153,19 +153,26 @@ public class Enemy : MonoBehaviour
         animator.speed = enemyMovementAI.moveSpeed / Settings.baseSpeedForEnemyAnimations;
     }
 
-    private void SetEnemyStartingWeapon()
+    public void SetEnemyStartingWeapon()
     {
         //Process if enemy has a weapon
         if (enemyDetails.enemyWeapon != null)
         {
-            Weapon weapon = new Weapon() { weaponDetailsSO = enemyDetails.enemyWeapon, weaponReloadTimer = 0f, weaponClipRemainingAmmo =
-                enemyDetails.enemyWeapon.weaponClipCapacity, weaponRemainingAmmo = enemyDetails.enemyWeapon.weaponAmmoCapacity, 
-                isWeaponReloading = false};
+            WeaponDetailsSO enemyWeapon = enemyDetails.enemyWeapon[Random.Range(0, enemyDetails.enemyWeapon.Length)];
 
-            //Set weapon for enemy
-            setActiveWeaponEvent.CallSetActiveWeaponEvent(weapon);
+            Weapon weapon = new Weapon()
+                {
+                    weaponDetailsSO = enemyWeapon,
+                    weaponReloadTimer = 0f,
+                    weaponClipRemainingAmmo = enemyWeapon.weaponClipCapacity,
+                    weaponRemainingAmmo = enemyWeapon.weaponAmmoCapacity,
+                    isWeaponReloading = false
+                };
 
-            EnemyEnable(true);
+                //Set weapon for enemy
+                setActiveWeaponEvent.CallSetActiveWeaponEvent(weapon);
+
+                EnemyEnable(true);           
         }
     }
 

@@ -20,6 +20,7 @@ public class EnemyWeaponAI : MonoBehaviour
     private EnemyDetailsSO enemyDetailsSO;
     private float firingIntervalTimer;
     private float firingDurationTimer;
+    private float weaponChangeDelayTimer;
 
     private void Awake()
     {
@@ -32,12 +33,14 @@ public class EnemyWeaponAI : MonoBehaviour
 
         firingIntervalTimer = WeaponShootInterval();
         firingDurationTimer = WeaponShootDuration();
+        weaponChangeDelayTimer = ChangeWeaponDelay();
     }
 
     private void Update()
     {
         //Update Timers
         firingIntervalTimer -= Time.deltaTime;
+        weaponChangeDelayTimer -= Time.deltaTime;
 
         //Interval Timer
         if (firingIntervalTimer < 0f)
@@ -55,6 +58,13 @@ public class EnemyWeaponAI : MonoBehaviour
                 firingDurationTimer = WeaponShootDuration();
             }
         }
+
+        //Change Weapon Timer
+        if (weaponChangeDelayTimer <= 0f && firingDurationTimer <= 0f)
+        {
+            enemy.SetEnemyStartingWeapon();
+            weaponChangeDelayTimer = ChangeWeaponDelay();
+        }
     }
 
     /// <summary>
@@ -68,6 +78,11 @@ public class EnemyWeaponAI : MonoBehaviour
     private float WeaponShootInterval()
     {
         return Random.Range(enemyDetailsSO.firingIntervalMin, enemyDetailsSO.firingIntervalMax);
+    }
+
+    private float ChangeWeaponDelay()
+    {
+        return Random.Range(enemyDetailsSO.weaponChangeDelayMin, enemyDetailsSO.weaponChangeDelayMax);
     }
 
     /// <summary>
@@ -96,18 +111,21 @@ public class EnemyWeaponAI : MonoBehaviour
         //Only fire if enemy has a weapon
         if (enemyDetailsSO.enemyWeapon != null)
         {
-            //Get ammoArray range
-            float enemyAmmoRange = enemyDetailsSO.enemyWeapon.weaponCurrentAmmo.ammoRange;
-
-            //Is player in range
-            if (playerDirectionVector.magnitude <= enemyAmmoRange)
+            foreach(WeaponDetailsSO weaponDetailsSO in enemyDetailsSO.enemyWeapon)
             {
-                //Does this enemy require line of sight to the player before firing?
-                if (enemyDetailsSO.firingLineOfSightRequired && !IsPlayerInLineOfSight(weaponDirection, enemyAmmoRange)) 
-                    return;
+                //Get ammoArray range
+                float enemyAmmoRange = weaponDetailsSO.weaponCurrentAmmo.ammoRange;
 
-                enemy.fireWeaponEvent.CallFireWeaponEvent(true, true, enemyAimDirection, enemyAngleDegrees, weaponAngleDegrees, weaponDirection);
-            }
+                //Is player in range
+                if (playerDirectionVector.magnitude <= enemyAmmoRange)
+                {
+                    //Does this enemy require line of sight to the player before firing?
+                    if (enemyDetailsSO.firingLineOfSightRequired && !IsPlayerInLineOfSight(weaponDirection, enemyAmmoRange))
+                        return;
+
+                    enemy.fireWeaponEvent.CallFireWeaponEvent(true, true, enemyAimDirection, enemyAngleDegrees, weaponAngleDegrees, weaponDirection);
+                }
+            }            
         }
     }
 

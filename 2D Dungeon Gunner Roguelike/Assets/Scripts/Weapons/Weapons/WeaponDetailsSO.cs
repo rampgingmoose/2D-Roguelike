@@ -27,8 +27,8 @@ public class WeaponDetailsSO : ScriptableObject
     public Vector3 weaponShootPosition;
     #region Tooltip
     [Tooltip("Weapon current ammoArray")]
-    public AmmoDetailsSO weaponCurrentAmmo;
     #endregion
+    public AmmoDetailsSO weaponCurrentAmmo;
     #region Tooltip
     [Tooltip("Weapon shoot effect SO - contains particle effect parameters to be used in conjunction with the weaponShootEffectPrefab")]
     #endregion

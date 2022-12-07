@@ -58,7 +58,7 @@ public class EnemyDetailsSO : ScriptableObject
     #region Tooltip
     [Tooltip("The weapon for the enemy - none if the enemy doesn't have a weapon")]
     #endregion
-    public WeaponDetailsSO enemyWeapon;
+    public WeaponDetailsSO[] enemyWeapon;
 
     #region Tooltip
     [Tooltip("The minimum time delay interval in seconds between bursts of enemy shooting. This value should be greater than 0. A random" +
@@ -83,6 +83,18 @@ public class EnemyDetailsSO : ScriptableObject
         "A random value will be selected between the min and max value.")]
     #endregion
     public float firingDurationMax = 2f;
+
+    #region Tooltip
+    [Tooltip("The minimum delay between changing weapons. This value should be greater than 0. A random" +
+        "value will be selected between the min and max value.")]
+    #endregion
+    public float weaponChangeDelayMin = 0f;
+
+    #region Tooltip
+    [Tooltip("The maximum delay between changing weapons. This value should be greater than 0 and the min value." +
+        "A random value will be selected between the min and max value.")]
+    #endregion
+    public float weaponChangeDelayMax = 0f;
 
     #region Tooltip
     [Tooltip("Select this is line of sight is required of the player before the enemy fires. If line of sight isn't selected the enemy will fire" +
