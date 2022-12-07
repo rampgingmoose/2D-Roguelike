@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class CiclePattern : MonoBehaviour, IFireable
 {
-    [Header("Projectile Settings")]
-    public int numberOfAmmo = 20;
-
     [Header("Private Variables")]
     private Vector3 startPoint;
     private const float radius = 1f;
+    private float patternAimAngle { get; set; }
 
     [Header("Ammo Details")]
-    private float ammoRange;
     private float ammoSpeed;
     private Vector3 fireDirectionVector;
     private float fireDirectionAngle;
     private AmmoDetailsSO ammoDetailsSO;
     [SerializeField] private Ammo[] ammoArray;
-    private float ammoChargeTimer;
+    [SerializeField] private float ammoChargeTimer;
+    [SerializeField] private float ammoRange;
 
     private void Awake()
     {
         startPoint = transform.position;
+    }
+
+    private void OnEnable()
+    {
+        foreach(Ammo ammo in ammoArray)
+        {
+            ammo.transform.position = transform.position;
+        }
     }
 
     private void Update()
@@ -35,14 +41,13 @@ public class CiclePattern : MonoBehaviour, IFireable
 
         SetFireDirection(ammoArray, ammoDetailsSO);
 
+        Vector3 distanceVector = (fireDirectionVector / 2f)* ammoSpeed * Time.deltaTime;
 
-        if (ammoDetailsSO.ammoChargeTime > 0f)
+        ammoRange -= distanceVector.magnitude;
+
+        if (ammoRange <= 0)
         {
-            ammoChargeTimer = ammoDetailsSO.ammoChargeTime;
-        }
-        else
-        {
-            ammoChargeTimer = 0f;
+            DisableAmmo();
         }
     }
 
@@ -52,7 +57,8 @@ public class CiclePattern : MonoBehaviour, IFireable
 
         this.ammoSpeed = ammoSpeed;
 
-        //Set ammoArray range
+        fireDirectionVector = HelperUtilities.GetDirectionVectorFromAngle(patternAimAngle);
+
         ammoRange = ammoDetailsSO.ammoRange;
 
         gameObject.SetActive(true);
@@ -79,21 +85,21 @@ public class CiclePattern : MonoBehaviour, IFireable
     private void SetFireDirection(Ammo[] ammo, AmmoDetailsSO ammoDetailsSO)
     {
         float aimAngle = 360f / ammoArray.Length;
-        float weaponAimAngle = 0f;
+        patternAimAngle = 0f;
         ammoSpeed = Random.Range(ammoDetailsSO.ammoSpeedMin, ammoDetailsSO.ammoSpeedMax);
 
-        for (int i = 0; i < ammo.Length; i++)
+        for (int i = 0; i <= ammoArray.Length - 1; i++)
         {
             //Direction calculations
-            float projectileDirXPosition = startPoint.x + Mathf.Sin((weaponAimAngle * Mathf.PI) / 180) * radius;
-            float projectileDirYPosition = startPoint.y + Mathf.Cos((weaponAimAngle * Mathf.PI) / 180) * radius;
+            float projectileDirXPosition = startPoint.x + Mathf.Sin((patternAimAngle * Mathf.PI) / 180) * radius;
+            float projectileDirYPosition = startPoint.y + Mathf.Cos((patternAimAngle * Mathf.PI) / 180) * radius;
 
             Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
-            fireDirectionVector = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
+            Vector3 projectileMoveDirectionVector = (projectileVector - startPoint).normalized * ammoSpeed * Time.fixedDeltaTime;
 
-            ammo[i].GetComponent<Rigidbody2D>().velocity = new Vector2(fireDirectionVector.x, fireDirectionVector.y);
+            ammo[i].GetComponent<Rigidbody2D>().velocity = new Vector3(projectileMoveDirectionVector.x, projectileMoveDirectionVector.y, 0f);
 
-            weaponAimAngle += aimAngle;
+            patternAimAngle += aimAngle;
         }
     }
 
