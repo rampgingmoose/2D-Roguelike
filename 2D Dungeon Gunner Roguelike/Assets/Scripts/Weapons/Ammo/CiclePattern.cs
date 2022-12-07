@@ -33,23 +33,7 @@ public class CiclePattern : MonoBehaviour, IFireable
             return;
         }
 
-        float angleStep = 360f / ammoArray.Length;
-        float angle = 0f;
-
-        //Direction calculations
-        float projectileDirXPosition = startPoint.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
-        float projectileDirYPosition = startPoint.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
-
-        Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
-        Vector3 projectileMoveDirection = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
-
-        foreach(Ammo ammo in ammoArray)
-        {
-            ammo.GetComponent<Rigidbody>().velocity += projectileMoveDirection;
-        }
-
-        angle += angleStep;
-
+        SetFireDirection(ammoArray);
 
         if (ammoDetailsSO.ammoChargeTime > 0f)
         {
@@ -66,8 +50,6 @@ public class CiclePattern : MonoBehaviour, IFireable
         this.ammoDetailsSO = ammoDetails;
 
         this.ammoSpeed = ammoSpeed;
-
-        SetFireDirection(ammoDetails, aimAngle, weaponAimAngle, weaponAimDirectionVector);
 
         //Set ammoArray range
         ammoRange = ammoDetailsSO.ammoRange;
@@ -93,28 +75,24 @@ public class CiclePattern : MonoBehaviour, IFireable
     /// <summary>
     /// Set ammoArray fire direction based on the input angle and direction adjusted by the random speed
     /// </summary>
-    private void SetFireDirection(AmmoDetailsSO ammoDetailsSO, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
+    private void SetFireDirection(Ammo[] ammo)
     {
-        //Calculate random spread andle between min and max
-        float randomSpread = Random.Range(ammoDetailsSO.ammoSpreadMin, ammoDetailsSO.ammoSpreadMax);
-
-        //Get a random spread toggle of -1 or 1
-        int spreadToggle = Random.Range(0, 2) * 2 - 1;
-
-        if (weaponAimDirectionVector.magnitude < Settings.useAimAngleDistance)
+        for (int i = 0; i < ammo.Length; i++)
         {
-            fireDirectionAngle = aimAngle;
-        }
-        else
-        {
-            fireDirectionAngle = weaponAimAngle;
-        }
+            float aimAngle = 360f / ammoArray.Length;
+            float weaponAimAngle = 0f;
 
-        //Adjust ammoArray fire angle by random spread
-        fireDirectionAngle += spreadToggle * randomSpread;
+            //Direction calculations
+            float projectileDirXPosition = startPoint.x + Mathf.Sin((weaponAimAngle * Mathf.PI) / 180) * radius;
+            float projectileDirYPosition = startPoint.y + Mathf.Cos((weaponAimAngle * Mathf.PI) / 180) * radius;
 
-        //Set ammoArray fire direction
-        fireDirectionVector = HelperUtilities.GetDirectionVectorFromAngle(fireDirectionAngle);
+            Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
+            Vector2 weaponAimDirectionVector = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
+
+            ammo[i].GetComponent<Rigidbody2D>().velocity = new Vector2(weaponAimDirectionVector.x, weaponAimDirectionVector.y);
+
+            weaponAimAngle += aimAngle;
+        }
     }
 
     public GameObject GetGameObject()
