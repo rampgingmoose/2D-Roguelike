@@ -33,7 +33,8 @@ public class CiclePattern : MonoBehaviour, IFireable
             return;
         }
 
-        SetFireDirection(ammoArray);
+        SetFireDirection(ammoArray, ammoDetailsSO);
+
 
         if (ammoDetailsSO.ammoChargeTime > 0f)
         {
@@ -75,21 +76,22 @@ public class CiclePattern : MonoBehaviour, IFireable
     /// <summary>
     /// Set ammoArray fire direction based on the input angle and direction adjusted by the random speed
     /// </summary>
-    private void SetFireDirection(Ammo[] ammo)
+    private void SetFireDirection(Ammo[] ammo, AmmoDetailsSO ammoDetailsSO)
     {
+        float aimAngle = 360f / ammoArray.Length;
+        float weaponAimAngle = 0f;
+        ammoSpeed = Random.Range(ammoDetailsSO.ammoSpeedMin, ammoDetailsSO.ammoSpeedMax);
+
         for (int i = 0; i < ammo.Length; i++)
         {
-            float aimAngle = 360f / ammoArray.Length;
-            float weaponAimAngle = 0f;
-
             //Direction calculations
             float projectileDirXPosition = startPoint.x + Mathf.Sin((weaponAimAngle * Mathf.PI) / 180) * radius;
             float projectileDirYPosition = startPoint.y + Mathf.Cos((weaponAimAngle * Mathf.PI) / 180) * radius;
 
             Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
-            Vector2 weaponAimDirectionVector = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
+            fireDirectionVector = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
 
-            ammo[i].GetComponent<Rigidbody2D>().velocity = new Vector2(weaponAimDirectionVector.x, weaponAimDirectionVector.y);
+            ammo[i].GetComponent<Rigidbody2D>().velocity = new Vector2(fireDirectionVector.x, fireDirectionVector.y);
 
             weaponAimAngle += aimAngle;
         }
