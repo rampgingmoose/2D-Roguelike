@@ -219,7 +219,7 @@ public class WeaponStatusUI : MonoBehaviour
     {
         ClearAmmoLoadedIcons();
 
-        //Instantiate ammo Icon prefab
+        //Instantiate ammoArray Icon prefab
         for(int i = 0; i < weapon.weaponClipRemainingAmmo; i++)
         {
             GameObject ammoIcon = Instantiate(GameResources.Instance.ammoIconPrefab, ammoHolderTransform);

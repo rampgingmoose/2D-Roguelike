@@ -79,7 +79,7 @@ public class Health : MonoBehaviour
             PostHitImmunity();
 
             //Set health bar as the percentage of health remaining
-            if (GameManager.Instance.bossHealthBarUI != null)
+            if (enemy != null && GameManager.Instance.bossHealthBarUI != null && enemy.enemyDetails.displayBossHealthBar == true)
             {
                 GameManager.Instance.bossHealthBarUI.InitializeBossHealthBar((float)currentHealth / (float)startingHealth);
             }

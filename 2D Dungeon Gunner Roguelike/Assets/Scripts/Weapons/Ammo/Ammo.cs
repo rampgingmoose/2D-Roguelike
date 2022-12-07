@@ -11,7 +11,7 @@ public class Ammo : MonoBehaviour, IFireable
     [SerializeField] TrailRenderer trailRenderer;
     [SerializeField] ParticleSystem smokeTrailParticles;
 
-    private float ammoRange = 0f; // the range of each ammo
+    private float ammoRange = 0f; // the range of each ammoArray
     private float ammoSpeed;
     private Vector3 fireDirectionVector;
     private float fireDirectionAngle;
@@ -42,28 +42,32 @@ public class Ammo : MonoBehaviour, IFireable
             isAmmoMaterialSet = true;
         }
 
-        //Calculate distance vector to move ammo
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-
-        transform.position += distanceVector;
-
-        ammoRange -= distanceVector.magnitude;
-
-        if(ammoRange <= 0f)
+        //Don't move ammoArray if movement has been overriden - e.g. this ammoArray is part of an ammoArray pattern that's meant to stick together
+        if (!overrideAmmoMovement)
         {
-            if (ammoDetailsSO.isPlayerAmmo)
-            {
-                StaticEventsHandler.CallMultiplierEvent(false);
-            }
+            //Calculate distance vector to move ammoArray
+            Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
 
-            //detach smoke trail child component so the particle effect can fade on its own once finished
-            if (ammoDetailsSO.isSmokeTrail)
-            {
-                DetachSmokeParticles();
-            }
+            transform.position += distanceVector;
 
-            DisableAmmo();
-        }
+            ammoRange -= distanceVector.magnitude;
+
+            if (ammoRange <= 0f)
+            {
+                if (ammoDetailsSO.isPlayerAmmo)
+                {
+                    StaticEventsHandler.CallMultiplierEvent(false);
+                }
+
+                //detach smoke trail child component so the particle effect can fade on its own once finished
+                if (ammoDetailsSO.isSmokeTrail)
+                {
+                    DetachSmokeParticles();
+                }
+
+                DisableAmmo();
+            }
+        }       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -88,7 +92,7 @@ public class Ammo : MonoBehaviour, IFireable
         }
         else
         {
-            //Show ammo hit effect
+            //Show ammoArray hit effect
             EnableAmmoHitEffect();
 
             DisableAmmo();
@@ -103,7 +107,7 @@ public class Ammo : MonoBehaviour, IFireable
 
         if (health != null)
         {
-            //Set isColliding to prevent ammo dealing damage multiple times
+            //Set isColliding to prevent ammoArray dealing damage multiple times
             isColliding = true;
 
             health.TakeDamage(ammoDetailsSO.ammoDamage);
@@ -115,7 +119,7 @@ public class Ammo : MonoBehaviour, IFireable
             }
         }
 
-        //If player ammo then update multiplier
+        //If player ammoArray then update multiplier
         if (ammoDetailsSO.isPlayerAmmo)
         {
             if (enemyHit)
@@ -132,8 +136,8 @@ public class Ammo : MonoBehaviour, IFireable
     }
 
     /// <summary>
-    /// Initialize the ammo being fired - using the ammoDetails, the aimangle, weaponAngle, and weaponOverrideDirectionVector.
-    /// If this ammo is part of a pattern the ammo movement can be overriden by setting overrideAmmoMovement to true
+    /// Initialize the ammoArray being fired - using the ammoDetails, the aimangle, weaponAngle, and weaponOverrideDirectionVector.
+    /// If this ammoArray is part of a pattern the ammoArray movement can be overriden by setting overrideAmmoMovement to true
     /// </summary>
     public void InitializeAmmo(AmmoDetailsSO ammoDetails, float aimAngle, float weaponAimAngle, float ammoSpeed, Vector3 weaponAimDirectionVector, bool overrideAmmoMovement = false)
     {
@@ -146,13 +150,13 @@ public class Ammo : MonoBehaviour, IFireable
         //Set Fire Direction
         SetFireDirection(ammoDetails, aimAngle, weaponAimAngle, weaponAimDirectionVector);
 
-        //Set ammo Sprite
+        //Set ammoArray Sprite
         spriteRenderer.sprite = ammoDetails.ammoSprite;
 
-        //Set initial ammo material depending on whether there is an ammo charge period
+        //Set initial ammoArray material depending on whether there is an ammoArray charge period
         if (ammoDetails.ammoChargeTime > 0f)
         {
-            //Set ammo charge timer
+            //Set ammoArray charge timer
             ammoChargeTimer = ammoDetails.ammoChargeTime;
             SetAmmoMaterial(ammoDetails.ammoMaterial);
             isAmmoMaterialSet = false;
@@ -164,16 +168,16 @@ public class Ammo : MonoBehaviour, IFireable
             isAmmoMaterialSet = true;
         }
 
-        //Set ammo range
+        //Set ammoArray range
         ammoRange = ammoDetails.ammoRange;
 
-        //Set ammo speed
+        //Set ammoArray speed
         this.ammoSpeed = ammoSpeed;
 
-        //Override ammo Movement
+        //Override ammoArray Movement
         this.overrideAmmoMovement = overrideAmmoMovement;
 
-        //Activate ammo gameobject
+        //Activate ammoArray gameobject
         gameObject.SetActive(true);
 
         #endregion
@@ -213,7 +217,7 @@ public class Ammo : MonoBehaviour, IFireable
     }
 
     /// <summary>
-    /// Set ammo fire direction and angle based on the input angle and direction adjusted by the random speed
+    /// Set ammoArray fire direction and angle based on the input angle and direction adjusted by the random speed
     /// </summary>
     private void SetFireDirection(AmmoDetailsSO ammoDetailsSO,float aimAngle,float weaponAimAngle,Vector3 weaponAimDirectionVector)
     {
@@ -232,18 +236,18 @@ public class Ammo : MonoBehaviour, IFireable
             fireDirectionAngle = weaponAimAngle;
         }
 
-        //Adjust ammo fire angle by random spread
+        //Adjust ammoArray fire angle by random spread
         fireDirectionAngle += spreadToggle * randomSpread;
 
-        //Set ammo Rotation
+        //Set ammoArray Rotation
         transform.eulerAngles = new Vector3(0f, 0, fireDirectionAngle);
 
-        //Set ammo fire direction
+        //Set ammoArray fire direction
         fireDirectionVector = HelperUtilities.GetDirectionVectorFromAngle(fireDirectionAngle);
     }
 
     /// <summary>
-    /// Disable the ammo - thus returning it to the object pool
+    /// Disable the ammoArray - thus returning it to the object pool
     /// </summary>
     private void DisableAmmo()
     {

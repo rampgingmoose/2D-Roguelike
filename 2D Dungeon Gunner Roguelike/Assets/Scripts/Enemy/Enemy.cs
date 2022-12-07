@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
     private MaterializeEffect materializeEffect;
     private HealthEvent healthEvent;
     private Health health;
+    [SerializeField] private BossHealthBarUI bossHealthBarUI;
 
     private void Awake()
     {
@@ -69,6 +70,7 @@ public class Enemy : MonoBehaviour
         materializeEffect = GetComponent<MaterializeEffect>();
         healthEvent = GetComponent<HealthEvent>();
         health = GetComponent<Health>();
+        bossHealthBarUI = FindObjectOfType<BossHealthBarUI>();
     }
 
     private void OnEnable()
@@ -110,7 +112,20 @@ public class Enemy : MonoBehaviour
 
         SetEnemyStartingWeapon();
 
+        SetBossName();
+
         StartCoroutine(MaterializeEnemy());
+    }
+
+    private void SetBossName()
+    {
+        if (enemyDetails.displayBossHealthBar == false)
+            return;
+
+        if (bossHealthBarUI != null)
+        {
+            bossHealthBarUI.bossName.text = enemyDetails.enemyName;
+        }
     }
 
     private void SetEnemyMovementUpdateFrame(int enemySpawnNumber)

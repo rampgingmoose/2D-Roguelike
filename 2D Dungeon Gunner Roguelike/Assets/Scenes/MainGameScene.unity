@@ -732,7 +732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dr. Smiles
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dfe1ba23c638bec49a583843476bb5c9, type: 2}
   m_sharedMaterial: {fileID: 8120199949304618070, guid: dfe1ba23c638bec49a583843476bb5c9, type: 2}
@@ -1852,7 +1852,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0.99930984
+    width: 0.9997764
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -2949,6 +2949,9 @@ MonoBehaviour:
     componentType: AmmoHitEffect
   - poolSize: 200
     prefab: {fileID: 5196961426759006828, guid: e81acd5d60c30074ebb758c373e5595d, type: 3}
+    componentType: IFireable
+  - poolSize: 10
+    prefab: {fileID: 2118786642640263177, guid: 1184a551631b4ec46846016f69a203a9, type: 3}
     componentType: IFireable
 --- !u!4 &1357968470
 Transform:

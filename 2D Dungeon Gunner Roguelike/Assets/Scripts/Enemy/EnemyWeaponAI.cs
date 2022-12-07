@@ -96,7 +96,7 @@ public class EnemyWeaponAI : MonoBehaviour
         //Only fire if enemy has a weapon
         if (enemyDetailsSO.enemyWeapon != null)
         {
-            //Get ammo range
+            //Get ammoArray range
             float enemyAmmoRange = enemyDetailsSO.enemyWeapon.weaponCurrentAmmo.ammoRange;
 
             //Is player in range

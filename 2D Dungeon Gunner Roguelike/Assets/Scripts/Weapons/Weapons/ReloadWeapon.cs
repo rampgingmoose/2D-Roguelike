@@ -72,7 +72,7 @@ public class ReloadWeapon : MonoBehaviour
             yield return null;
         }
 
-        //If total ammo is to be increase then update
+        //If total ammoArray is to be increase then update
         if (topUpAmmoPercent != 0)
         {
             int ammoIncrease = Mathf.RoundToInt((weapon.weaponDetailsSO.weaponAmmoCapacity * topUpAmmoPercent) / 100f);
@@ -89,18 +89,18 @@ public class ReloadWeapon : MonoBehaviour
             }
         }
 
-        //If weapon has infinite ammo then just refill clip
+        //If weapon has infinite ammoArray then just refill clip
         if (weapon.weaponDetailsSO.hasInfiniteAmmo)
         {
             weapon.weaponClipRemainingAmmo = weapon.weaponDetailsSO.weaponClipCapacity;
         }
-        //if not infinite ammo then if remaining ammo is greater than the amount required to
+        //if not infinite ammoArray then if remaining ammoArray is greater than the amount required to
         //refill the clip, then fully refill the clip
         else if (weapon.weaponRemainingAmmo >= weapon.weaponDetailsSO.weaponClipCapacity)
         {
             weapon.weaponClipRemainingAmmo = weapon.weaponDetailsSO.weaponClipCapacity;
         }
-        //else set the clip to the remaining ammo
+        //else set the clip to the remaining ammoArray
         else
         {
             weapon.weaponClipRemainingAmmo = weapon.weaponRemainingAmmo;

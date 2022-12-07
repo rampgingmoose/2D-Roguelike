@@ -26,7 +26,7 @@ public class WeaponDetailsSO : ScriptableObject
     #endregion Tooltip
     public Vector3 weaponShootPosition;
     #region Tooltip
-    [Tooltip("Weapon current ammo")]
+    [Tooltip("Weapon current ammoArray")]
     public AmmoDetailsSO weaponCurrentAmmo;
     #endregion
     #region Tooltip
@@ -47,7 +47,7 @@ public class WeaponDetailsSO : ScriptableObject
     [Header("WEAPON OPERATING VALUES")]
     #endregion 
     #region
-    [Tooltip("Select if the weapon has infinite ammo")]
+    [Tooltip("Select if the weapon has infinite ammoArray")]
     #endregion
     public bool hasInfiniteAmmo = false;
     #region Tooltip
@@ -59,7 +59,7 @@ public class WeaponDetailsSO : ScriptableObject
     #endregion
     public int weaponClipCapacity = 6;
     #region Tooltip
-    [Tooltip("Weapon ammo capacity - the maximum number of rounds that can be held for this weapon")]
+    [Tooltip("Weapon ammoArray capacity - the maximum number of rounds that can be held for this weapon")]
     #endregion
     public int weaponAmmoCapacity = 100;
     #region Tooltip

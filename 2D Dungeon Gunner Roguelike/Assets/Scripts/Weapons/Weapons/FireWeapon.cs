@@ -94,7 +94,7 @@ public class FireWeapon : MonoBehaviour
     /// </summary>
     private bool IsWeaponReadyToFire()
     {
-        //if there is no ammo and weapon doesn't have infinite amoo then return false.
+        //if there is no ammoArray and weapon doesn't have infinite amoo then return false.
         if (activeWeapon.GetCurrentWeapon().weaponRemainingAmmo <= 0 && !activeWeapon.GetCurrentWeapon().weaponDetailsSO.hasInfiniteAmmo)
             return false;
 
@@ -106,7 +106,7 @@ public class FireWeapon : MonoBehaviour
         if (firePrechargeTimer > 0f || fireRateCoolDownTimer > 0f)
             return false;
 
-        //If the weapon has no ammo in the clip and the weapon doesn't have infinite ammo then return false
+        //If the weapon has no ammoArray in the clip and the weapon doesn't have infinite ammoArray then return false
         if (!activeWeapon.GetCurrentWeapon().weaponDetailsSO.hasInfiniteClipCapacity && activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo <= 0)
         {
             reloadWeaponEvent.CallReloadWeaponEvent(activeWeapon.GetCurrentWeapon(), 0);
@@ -119,7 +119,7 @@ public class FireWeapon : MonoBehaviour
     }
 
     /// <summary>
-    /// Set up the ammo using an ammo gameObject and component from the object pool
+    /// Set up the ammoArray using an ammoArray gameObject and component from the object pool
     /// </summary>
     private void FireAmmo(float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
     {
@@ -131,16 +131,16 @@ public class FireWeapon : MonoBehaviour
         }
     }
     /// <summary>
-    /// Coroutine to spawn multiple ammo per shot if specified in the ammo details
+    /// Coroutine to spawn multiple ammoArray per shot if specified in the ammoArray details
     /// </summary>
     private IEnumerator FireAmmoRoutine(AmmoDetailsSO currentAmmo, float aimAngle, float weaponAimAngle, Vector3 weaponAimDirectionVector)
     {
         int ammoCounter = 0;
 
-        //Get random ammo per shot
+        //Get random ammoArray per shot
         int ammoPerShot = Random.Range(currentAmmo.ammoSpawnAmountMin, currentAmmo.ammoSpawnAmountMax + 1);
 
-        //Get random interval between ammo
+        //Get random interval between ammoArray
         float ammoSpawnInterval;
 
         if (ammoPerShot > 1)
@@ -152,12 +152,12 @@ public class FireWeapon : MonoBehaviour
             ammoSpawnInterval = 0f;
         }
 
-        //Loop for number of ammo per shot
+        //Loop for number of ammoArray per shot
         while (ammoCounter < ammoPerShot)
         {
             ammoCounter++;
 
-            //Get ammo prefab from array
+            //Get ammoArray prefab from array
             GameObject ammoPrefab = currentAmmo.ammoPrefabArray[Random.Range(0, currentAmmo.ammoPrefabArray.Length)];
 
             //Get random speed value
@@ -166,13 +166,13 @@ public class FireWeapon : MonoBehaviour
             //Get GameObject with IFireable component
             IFireable ammo = (IFireable)PoolManager.Instance.ReuseComponent(ammoPrefab, activeWeapon.GetShootPosition(), Quaternion.identity);
 
-            //Initialize ammo
+            //Initialize ammoArray
             ammo.InitializeAmmo(currentAmmo, aimAngle, weaponAimAngle, ammoSpeed, weaponAimDirectionVector);
 
             yield return new WaitForSeconds(ammoSpawnInterval);
         }
 
-        //Reduce ammo clip count if not infinite clip capacity
+        //Reduce ammoArray clip count if not infinite clip capacity
         if (!activeWeapon.GetCurrentWeapon().weaponDetailsSO.hasInfiniteClipCapacity)
         {
             activeWeapon.GetCurrentWeapon().weaponClipRemainingAmmo--;

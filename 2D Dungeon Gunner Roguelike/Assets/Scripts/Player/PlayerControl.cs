@@ -354,11 +354,11 @@ public class PlayerControl : MonoBehaviour
         if (currentWeapon.isWeaponReloading) 
             return;
 
-        //remaining ammo is less than clip capacity then return and not infinite ammo then return
+        //remaining ammoArray is less than clip capacity then return and not infinite ammoArray then return
         if (currentWeapon.weaponRemainingAmmo < currentWeapon.weaponDetailsSO.weaponClipCapacity && !currentWeapon.weaponDetailsSO.hasInfiniteAmmo)
             return;
 
-        //If ammo in clip equals clip capacity then return
+        //If ammoArray in clip equals clip capacity then return
         if (currentWeapon.weaponRemainingAmmo == currentWeapon.weaponDetailsSO.weaponClipCapacity)
             return;
 

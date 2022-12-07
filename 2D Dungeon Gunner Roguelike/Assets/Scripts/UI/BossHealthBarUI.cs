@@ -18,24 +18,7 @@ public class BossHealthBarUI : MonoBehaviour
     #region Tooltip
     [Tooltip("Populate with Boss Name TMP Component")]
     #endregion
-    [SerializeField] private TextMeshProUGUI bossName;
-    private Enemy enemy;
-
-    private void Awake()
-    {
-        enemy = GameManager.Instance.GetComponent<Enemy>();
-
-        healthBarSlider = GetComponentInChildren<Slider>();
-        bossName = GetComponentInChildren<TextMeshProUGUI>();
-    }
-
-    private void Start()
-    {
-        if(enemy != null && enemy.enemyDetails.displayBossHealthBar == true)
-        {
-            bossName.text = enemy.enemyDetails.name;
-        }
-    }
+    [SerializeField] public TextMeshProUGUI bossName;
 
     public void EnableBossHealthBar()
     {

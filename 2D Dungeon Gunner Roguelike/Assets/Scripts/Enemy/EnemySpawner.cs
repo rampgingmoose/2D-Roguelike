@@ -60,7 +60,7 @@ public class EnemySpawner : SingletonMonoBehavior<EnemySpawner>
         //Lock Doors
         currentRoom.instantiatedRoom.LockDoors();
         
-        if (currentRoom.roomNodeType.isBossRoom)
+        if (currentRoom.roomNodeType.isBossRoom && bossHealthBar != null)
         {
             bossHealthBar.EnableBossHealthBar();
         }

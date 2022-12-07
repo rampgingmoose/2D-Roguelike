@@ -2,23 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoPattern : MonoBehaviour, IFireable
+public class CiclePattern : MonoBehaviour, IFireable
 {
-    #region
-    [Tooltip("Populate the array with the child ammoArray gameobjects")]
-    #endregion
-    [SerializeField] private Ammo[] ammoArray;
+    [Header("Projectile Settings")]
+    public int numberOfAmmo = 20;
 
+    [Header("Private Variables")]
+    private Vector3 startPoint;
+    private const float radius = 1f;
+
+    [Header("Ammo Details")]
     private float ammoRange;
     private float ammoSpeed;
     private Vector3 fireDirectionVector;
     private float fireDirectionAngle;
     private AmmoDetailsSO ammoDetailsSO;
+    [SerializeField] private Ammo[] ammoArray;
     private float ammoChargeTimer;
 
-    public GameObject GetGameObject()
+    private void Awake()
     {
-        return gameObject;
+        startPoint = transform.position;
+    }
+
+    private void Update()
+    {
+        if (ammoChargeTimer > 0f)
+        {
+            ammoChargeTimer -= Time.deltaTime;
+            return;
+        }
+
+        float angleStep = 360f / ammoArray.Length;
+        float angle = 0f;
+
+        //Direction calculations
+        float projectileDirXPosition = startPoint.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+        float projectileDirYPosition = startPoint.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+
+        Vector3 projectileVector = new Vector3(projectileDirXPosition, projectileDirYPosition, 0);
+        Vector3 projectileMoveDirection = (projectileVector - startPoint).normalized * ammoSpeed * Time.deltaTime;
+
+        foreach(Ammo ammo in ammoArray)
+        {
+            ammo.GetComponent<Rigidbody>().velocity += projectileMoveDirection;
+        }
+
+        angle += angleStep;
+
+
+        if (ammoDetailsSO.ammoChargeTime > 0f)
+        {
+            ammoChargeTimer = ammoDetailsSO.ammoChargeTime;
+        }
+        else
+        {
+            ammoChargeTimer = 0f;
+        }
     }
 
     public void InitializeAmmo(AmmoDetailsSO ammoDetails, float aimAngle, float weaponAimAngle, float ammoSpeed, Vector3 weaponAimDirectionVector, bool overrideAmmoMovement = false)
@@ -50,31 +90,6 @@ public class AmmoPattern : MonoBehaviour, IFireable
         }
     }
 
-    private void Update()
-    {
-        if (ammoChargeTimer > 0f)
-        {
-            ammoChargeTimer -= Time.deltaTime;
-            return;
-        }
-
-        //Calculate distance vector to move ammoArray
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-
-        transform.position += distanceVector;
-
-        //Rotate amo
-        transform.Rotate(new Vector3(0f, 0f, ammoDetailsSO.ammoRotationSpeed * Time.deltaTime));
-
-        //Disable after max range reached
-        ammoRange -= distanceVector.magnitude;
-
-        if (ammoRange < 0f)
-        {
-            DisableAmmo();
-        }
-    }
-
     /// <summary>
     /// Set ammoArray fire direction based on the input angle and direction adjusted by the random speed
     /// </summary>
@@ -102,17 +117,13 @@ public class AmmoPattern : MonoBehaviour, IFireable
         fireDirectionVector = HelperUtilities.GetDirectionVectorFromAngle(fireDirectionAngle);
     }
 
+    public GameObject GetGameObject()
+    {
+        return gameObject;
+    }
+
     private void DisableAmmo()
     {
         gameObject.SetActive(false);
     }
-
-    #region Validation
-#if UNITY_EDITOR
-    private void OnValidate()
-    {
-        HelperUtilities.ValidateCheckEnumerableValues(this, nameof(ammoArray), ammoArray);
-    }
-#endif
-    #endregion
 }

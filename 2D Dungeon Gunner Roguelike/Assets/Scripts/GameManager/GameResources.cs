@@ -87,7 +87,7 @@ public class GameResources : MonoBehaviour
     [Header("UI")]
     #endregion
     #region Tooltip
-    [Tooltip("Populate with ammo icon prefab")]
+    [Tooltip("Populate with ammoArray icon prefab")]
     #endregion
     public GameObject ammoIconPrefab;
     #region

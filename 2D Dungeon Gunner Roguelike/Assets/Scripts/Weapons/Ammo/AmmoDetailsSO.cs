@@ -10,7 +10,7 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("BASIC AMMO DETAILS")]
     #endregion
     #region
-    [Tooltip("Name for the ammo")]
+    [Tooltip("Name for the ammoArray")]
     #endregion
     public string ammoName;
     public bool isPlayerAmmo;
@@ -20,25 +20,25 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("AMMO SPRITE, PREFAB & MATERIALS")]
     #endregion
     #region
-    [Tooltip("Sprite to be used for the ammo")]
+    [Tooltip("Sprite to be used for the ammoArray")]
     #endregion
     public Sprite ammoSprite;
     #region
-    [Tooltip("Populate with the prefab to be used for the ammo. If multiple prefabs are specified then a random prefab from the array" +
-        "will be selected. The prefab can be an ammo pattern - as long as it conforms to IFireable interface")]
+    [Tooltip("Populate with the prefab to be used for the ammoArray. If multiple prefabs are specified then a random prefab from the array" +
+        "will be selected. The prefab can be an ammoArray pattern - as long as it conforms to IFireable interface")]
     #endregion
     public GameObject[] ammoPrefabArray;
     #region
-    [Tooltip("The material to be used for the ammo")]
+    [Tooltip("The material to be used for the ammoArray")]
     #endregion
     public Material ammoMaterial;
     #region
-    [Tooltip("If the ammo should 'charge' briefly before moving then set the time in seconds that the ammo is held charging after firing " +
+    [Tooltip("If the ammoArray should 'charge' briefly before moving then set the time in seconds that the ammoArray is held charging after firing " +
         "before release")]
     #endregion
     public float ammoChargeTime = 0.1f;
     #region
-    [Tooltip("If the ammo has a charge time then specify what material should be used to render while charging")]
+    [Tooltip("If the ammoArray has a charge time then specify what material should be used to render while charging")]
     #endregion
     public Material ammoChargeMaterial;
 
@@ -56,23 +56,23 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("AMMO BASE PARAMETERS")]
     #endregion
     #region
-    [Tooltip("The damage each ammo deals")]
+    [Tooltip("The damage each ammoArray deals")]
     #endregion
     public int ammoDamage = 1;
     #region
-    [Tooltip("The minimum speed of the ammo - the speed will be a random value between the min and max")]
+    [Tooltip("The minimum speed of the ammoArray - the speed will be a random value between the min and max")]
     #endregion
     public float ammoSpeedMin = 20f;
     #region
-    [Tooltip("The maximum speed of the ammo - the speed will be a random value between the min and max")]
+    [Tooltip("The maximum speed of the ammoArray - the speed will be a random value between the min and max")]
     #endregion
     public float ammoSpeedMax = 20f;
     #region
-    [Tooltip("The range of the ammo (or the ammo pattern) in unity units")]
+    [Tooltip("The range of the ammoArray (or the ammoArray pattern) in unity units")]
     #endregion
     public float ammoRange = 20f;
     #region
-    [Tooltip("The rotation speed in degrees per second of the ammo pattern")]
+    [Tooltip("The rotation speed in degrees per second of the ammoArray pattern")]
     #endregion
     public float ammoRotationSpeed = 1f;
 
@@ -81,12 +81,12 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("AMMO SPREAD DETAILS")]
     #endregion
     #region
-    [Tooltip("This is the minimum spead angle of the ammo. A higher spread means less accuracy. A random spread is calculated" +
+    [Tooltip("This is the minimum spead angle of the ammoArray. A higher spread means less accuracy. A random spread is calculated" +
         " between the min and max vaules")]
     #endregion
     public float ammoSpreadMin = 0f;
     #region
-    [Tooltip("This is the maximum spread angle of the ammo. A higher spread means less accuracy. A random spread is calculated" +
+    [Tooltip("This is the maximum spread angle of the ammoArray. A higher spread means less accuracy. A random spread is calculated" +
         "between the min and max values")]
     #endregion
     public float ammoSpreadMax = 0f;
@@ -96,22 +96,22 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("AMMO SPAWN DETAILS")]
     #endregion
     #region
-    [Tooltip("This is the minimum number of ammo that are spawned per shot. A random number of ammo are spawned between the minimum" +
+    [Tooltip("This is the minimum number of ammoArray that are spawned per shot. A random number of ammoArray are spawned between the minimum" +
         "and maximum values.")]
     #endregion
     public int ammoSpawnAmountMin = 1;
     #region
-    [Tooltip("This is the maximum number of ammo that spawned per shot. A random number of ammo are spawned between the minimum" +
+    [Tooltip("This is the maximum number of ammoArray that spawned per shot. A random number of ammoArray are spawned between the minimum" +
         "and maximum values.")]
     #endregion
     public int ammoSpawnAmountMax = 1;
     #region
-    [Tooltip("Minimum spawn interval time. The time interval in seconds between spawned ammo is a random value between the minimum" +
+    [Tooltip("Minimum spawn interval time. The time interval in seconds between spawned ammoArray is a random value between the minimum" +
         "and maximum values specified.")]
     #endregion
     public float ammoSpawnIntervalMin = 0f;
     #region
-    [Tooltip("Maximum spawn interval time. The time interval in seconds between spawned ammo is a random value between the minimum" +
+    [Tooltip("Maximum spawn interval time. The time interval in seconds between spawned ammoArray is a random value between the minimum" +
         "and maximum values specified.")]
     public float ammoSpawnIntervalMax = 0f;
     #endregion
@@ -121,7 +121,7 @@ public class AmmoDetailsSO : ScriptableObject
     [Header("AMMO TRAIL DETAILS")]
     #endregion
     #region
-    [Tooltip("Selected if an ammo trail is required, otherwise deselect. If selected the the rest of the ammo trails values should be populated.")]
+    [Tooltip("Selected if an ammoArray trail is required, otherwise deselect. If selected the the rest of the ammoArray trails values should be populated.")]
     #endregion
     public bool isAmmoTrail = false;
     #region Tooltip
@@ -137,11 +137,11 @@ public class AmmoDetailsSO : ScriptableObject
     #endregion
     public Material ammoTrailMaterial;
     #region
-    [Tooltip("The starting width for the ammo trail.")]
+    [Tooltip("The starting width for the ammoArray trail.")]
     #endregion
     [Range(0f, 1f)] public float ammoTrailStartWidth;
     #region
-    [Tooltip("The end width for the ammo trail.")]
+    [Tooltip("The end width for the ammoArray trail.")]
     #endregion
     [Range(0f, 1f)] public float ammoTrailEndWidth;
 

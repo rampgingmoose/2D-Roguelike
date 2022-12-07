@@ -47,11 +47,6 @@ public class HeathUI : MonoBehaviour
             heart.GetComponent<RectTransform>().anchoredPosition = new Vector2(Settings.uiHeartSpacing * i, 0f);
 
             healthHeartList.Add(heart);
-
-            if (GameManager.Instance.GetPlayer().health.currentHealth % 10 != 0)
-            {
-                healthHeartList[i - 1] = Instantiate(GameResources.Instance.halfHeartImage, transform);
-            }
         }
     }
 }
