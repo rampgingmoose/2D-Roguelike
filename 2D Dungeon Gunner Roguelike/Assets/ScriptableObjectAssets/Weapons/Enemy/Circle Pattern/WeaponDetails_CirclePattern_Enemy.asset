@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponDetails_CirclePattern_Enemy
   m_EditorClassIdentifier: 
   weaponName: Circle Pattern
-  weaponSprite: {fileID: 21300000, guid: bba254fadfd115f41921877e4e1d449f, type: 3}
+  weaponSprite: {fileID: 21300000, guid: 03a1ea0c5593c7e469d960da55763a21, type: 3}
   weaponShootPosition: {x: 0, y: 0, z: 0}
   weaponCurrentAmmo: {fileID: 11400000, guid: 7ae09ca1ab2df284db4f4fa0d3c8a086, type: 2}
   weaponShootEffectSO: {fileID: 11400000, guid: 37b8cecd9868c69429825d4c1061c829, type: 2}

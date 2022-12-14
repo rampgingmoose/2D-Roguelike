@@ -39,9 +39,16 @@ public class CiclePattern : MonoBehaviour, IFireable
             return;
         }
 
+        
+    }
+
+    private void FixedUpdate()
+    {
         SetFireDirection(ammoArray, ammoDetailsSO);
 
-        Vector3 distanceVector = (fireDirectionVector / 2f)* ammoSpeed * Time.deltaTime;
+        Vector3 distanceVector = (fireDirectionVector / 2f) * ammoSpeed * Time.fixedDeltaTime;
+
+        transform.Rotate(new Vector3(0f, 0f, ammoDetailsSO.ammoRotationSpeed * Time.deltaTime));
 
         ammoRange -= distanceVector.magnitude;
 

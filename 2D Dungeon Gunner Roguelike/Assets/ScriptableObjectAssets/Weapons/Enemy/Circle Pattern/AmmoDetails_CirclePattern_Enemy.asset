@@ -22,16 +22,16 @@ MonoBehaviour:
   ammoChargeMaterial: {fileID: 0}
   ammoHitEffectSO: {fileID: 11400000, guid: bb5776d9f03c3f8439c43661a649dbeb, type: 2}
   ammoDamage: 20
-  ammoSpeedMin: 300
-  ammoSpeedMax: 300
-  ammoRange: 600
-  ammoRotationSpeed: 1
+  ammoSpeedMin: 400
+  ammoSpeedMax: 400
+  ammoRange: 700
+  ammoRotationSpeed: 0
   ammoSpreadMin: 1
-  ammoSpreadMax: 3
+  ammoSpreadMax: 1
   ammoSpawnAmountMin: 1
   ammoSpawnAmountMax: 3
-  ammoSpawnIntervalMin: 0.1
-  ammoSpawnIntervalMax: 0.1
+  ammoSpawnIntervalMin: 0.3
+  ammoSpawnIntervalMax: 0.3
   isAmmoTrail: 0
   isSmokeTrail: 0
   ammoTrailTime: 0

@@ -37,6 +37,11 @@ public class RoomLightingControl : MonoBehaviour
 
             FadeInDoors();
 
+            //Ensure room environment decoration game objects are activated
+            instantiatedRoom.ActivateEnvironmentGameObjects();
+
+            FadeInEnvironmentObjectsLighting();
+
             instantiatedRoom.room.isLit = true;
         }
     }
@@ -78,6 +83,43 @@ public class RoomLightingControl : MonoBehaviour
             DoorLightingControl doorLightingControl = door.GetComponentInChildren<DoorLightingControl>();
 
             doorLightingControl.FadeInDoor(door);
+        }
+    }
+
+    private void FadeInEnvironmentObjectsLighting()
+    {
+        //Create new Material to fade in
+        Material material = new Material(GameResources.Instance.variableLitShader);
+
+        //Get all environment components in room
+        Environment[] environmentComponents = GetComponentsInChildren<Environment>();
+
+        foreach(Environment environmentComponent in environmentComponents)
+        {
+            if (environmentComponent.spriteRenderer != null)
+            {
+                environmentComponent.spriteRenderer.material = material;
+            }
+        }
+
+        StartCoroutine(FadeInEnvironmentLightingRoutine(material, environmentComponents));
+    }
+
+    private IEnumerator FadeInEnvironmentLightingRoutine(Material material, Environment[] environmentComponents)
+    {
+        //Graduall fade in the lighting
+        for (float i = 0; i <= 1f; i += Time.deltaTime / Settings.fadeInTime)
+        {
+            material.SetFloat("Aplha_Slider", i);
+            yield return null;
+        }
+
+        foreach (Environment environmentComponent in environmentComponents)
+        {
+            if (environmentComponent.spriteRenderer != null)
+            {
+                environmentComponent.spriteRenderer.material = GameResources.Instance.litMaterial;
+            }
         }
     }
 }

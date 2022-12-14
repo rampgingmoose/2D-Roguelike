@@ -20,7 +20,7 @@ public class EnemyWeaponAI : MonoBehaviour
     private EnemyDetailsSO enemyDetailsSO;
     private float firingIntervalTimer;
     private float firingDurationTimer;
-    private float weaponChangeDelayTimer;
+    [SerializeField] private float weaponChangeDelayTimer;
 
     private void Awake()
     {
@@ -60,8 +60,11 @@ public class EnemyWeaponAI : MonoBehaviour
         }
 
         //Change Weapon Timer
-        if (weaponChangeDelayTimer <= 0f && firingDurationTimer <= 0f)
+        if (weaponChangeDelayTimer <= 0f)
         {
+            if (enemy.enemyDetails.enemyWeapon.Length < 2)
+                return;
+
             enemy.SetEnemyStartingWeapon();
             weaponChangeDelayTimer = ChangeWeaponDelay();
         }
