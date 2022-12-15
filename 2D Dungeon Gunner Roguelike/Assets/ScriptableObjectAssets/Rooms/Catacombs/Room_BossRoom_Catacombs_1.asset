@@ -19,18 +19,18 @@ MonoBehaviour:
   lowerBounds: {x: -24, y: 9}
   upperBounds: {x: 34, y: 49}
   doorwayList:
-  - position: {x: 5, y: 63}
+  - position: {x: 5, y: 49}
     orientation: 0
     doorPrefab: {fileID: 8621563293636004276, guid: d19ecca206897b1408bf0b641f18b8e1, type: 3}
-    doorwayStartCopyPosition: {x: 2, y: 63}
+    doorwayStartCopyPosition: {x: 2, y: 49}
     doorwayCopyTileWidth: 5
     doorwayCopyTileHeight: 11
     isConnected: 0
     isUnavailable: 0
-  - position: {x: 5, y: -2}
+  - position: {x: 5, y: 9}
     orientation: 2
     doorPrefab: {fileID: 8621563293636004276, guid: d19ecca206897b1408bf0b641f18b8e1, type: 3}
-    doorwayStartCopyPosition: {x: 2, y: 2}
+    doorwayStartCopyPosition: {x: 2, y: 9}
     doorwayCopyTileWidth: 5
     doorwayCopyTileHeight: 5
     isConnected: 0

@@ -19,18 +19,18 @@ MonoBehaviour:
   lowerBounds: {x: -5, y: 7}
   upperBounds: {x: 45, y: 34}
   doorwayList:
-  - position: {x: 21, y: 44}
+  - position: {x: 21, y: 34}
     orientation: 0
     doorPrefab: {fileID: 8621563293636004276, guid: d19ecca206897b1408bf0b641f18b8e1, type: 3}
-    doorwayStartCopyPosition: {x: 18, y: 44}
+    doorwayStartCopyPosition: {x: 18, y: 34}
     doorwayCopyTileWidth: 5
     doorwayCopyTileHeight: 6
     isConnected: 0
     isUnavailable: 0
-  - position: {x: 20, y: 0}
+  - position: {x: 20, y: 7}
     orientation: 2
     doorPrefab: {fileID: 8621563293636004276, guid: d19ecca206897b1408bf0b641f18b8e1, type: 3}
-    doorwayStartCopyPosition: {x: 17, y: 4}
+    doorwayStartCopyPosition: {x: 17, y: 7}
     doorwayCopyTileWidth: 5
     doorwayCopyTileHeight: 5
     isConnected: 0
@@ -52,10 +52,9 @@ MonoBehaviour:
     isConnected: 0
     isUnavailable: 0
   spawnPositionArray:
-  - {x: 3, y: 35}
-  - {x: 10, y: 30}
-  - {x: 11, y: 11}
-  - {x: 29, y: 12}
+  - {x: 20, y: 22}
+  - {x: 21, y: 22}
+  - {x: 21, y: 20}
   enemiesByLevelList:
   - dungeonLevel: {fileID: 11400000, guid: b929f6c24ab0af446980635b02760c15, type: 2}
     spawnableObjectRatioList:
@@ -67,11 +66,11 @@ MonoBehaviour:
       ratio: 5
   - dungeonLevel: {fileID: 11400000, guid: a201a2190ca38bf44a219816a92394a1, type: 2}
     spawnableObjectRatioList:
-    - dungeonObject: {fileID: 11400000, guid: 716f9e816b3a33f4d9391a028474c90e, type: 2}
+    - dungeonObject: {fileID: 11400000, guid: cff1084f42ebef94fa82ae83199fb03a, type: 2}
       ratio: 5
   - dungeonLevel: {fileID: 11400000, guid: 3f798fa0a3515f74d872bb160c313fde, type: 2}
     spawnableObjectRatioList:
-    - dungeonObject: {fileID: 11400000, guid: 716f9e816b3a33f4d9391a028474c90e, type: 2}
+    - dungeonObject: {fileID: 11400000, guid: cff1084f42ebef94fa82ae83199fb03a, type: 2}
       ratio: 5
   roomEnemySpawnParametersList:
   - dungeonLevelSO: {fileID: 11400000, guid: b929f6c24ab0af446980635b02760c15, type: 2}

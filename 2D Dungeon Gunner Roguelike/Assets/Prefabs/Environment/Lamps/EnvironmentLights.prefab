@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a4ea43fe7ddf099428e90d7b7ac44139, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -279,8 +279,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6458885264238625408}
   m_Enabled: 1
-  m_SortingLayerID: -229619225
-  m_SortingLayer: 3
+  m_SortingLayerID: -653709415
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!1 &8596157586934444833
 GameObject:
@@ -337,7 +337,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: a4ea43fe7ddf099428e90d7b7ac44139, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
