@@ -31,11 +31,13 @@ public class ActivateRooms : MonoBehaviour
         {
             Room room = keyValuePair.Value;
 
+            //If room is within minimap camera viewport then activate room game object
             if ((room.lowerBounds.x <= minimapCameraWorldPositionUpperBounds.x && room.lowerBounds.y <= minimapCameraWorldPositionUpperBounds.y) &&
                 (room.upperBounds.x >= minimapCameraWorldPositionLowerBounds.x && room.upperBounds.y >= minimapCameraWorldPositionLowerBounds.y))
             {
                 room.instantiatedRoom.gameObject.SetActive(true);
 
+                //If room is within camera viewport then activate environment game objects
                 if ((room.lowerBounds.x <= mainCameraWorldPositionUpperBounds.x && room.lowerBounds.y <= mainCameraWorldPositionUpperBounds.y) &&
                     room.upperBounds.x >= mainCameraWorldPositionLowerBounds.x && room.upperBounds.y >= mainCameraWorldPositionLowerBounds.y)
                 {

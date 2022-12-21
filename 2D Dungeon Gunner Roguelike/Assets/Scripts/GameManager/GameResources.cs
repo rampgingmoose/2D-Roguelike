@@ -49,6 +49,26 @@ public class GameResources : MonoBehaviour
     [Tooltip("Door open and close sound effect")]
     #endregion
     public SoundEffectSO doorOpenSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the table flip sound effect")]
+    #endregion
+    public SoundEffectSO tableFlipSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the chest open sound effect")]
+    #endregion
+    public SoundEffectSO chestOpenSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the health pickup sound effect")]
+    #endregion
+    public SoundEffectSO healthPickUpSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the ammo pickup sound effect")]
+    #endregion
+    public SoundEffectSO ammoPickupSoundEffect;
+    #region Tooltip
+    [Tooltip("Populate with the weapon pickup sound effect")]
+    #endregion
+    public SoundEffectSO weaponPickupSoundEffect;
 
     #region Header MATERIALS
     [Space(10)]
@@ -68,6 +88,10 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with the Variable Lite Shader")]
     #endregion
     public Shader variableLitShader;
+    #region Tooltip
+    [Tooltip("Populate with the materialize shader")]
+    #endregion
+    public Shader materializeShader;
 
     #region Header SPECIAL TILEMAP TILES
     [Space(10)]
@@ -100,6 +124,23 @@ public class GameResources : MonoBehaviour
     #endregion
     public GameObject halfHeartImage;
 
+    #region Header CHESTS
+    [Space(10)]
+    [Header("CHESTS")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Populate with chest Item prefab")]
+    #endregion
+    public GameObject chestItemPrefab;
+    #region Tooltip
+    [Tooltip("Populate with heart icon sprite")]
+    #endregion
+    public Sprite heartIcon;
+    #region Tooltip
+    [Tooltip("Populate with bullet icon sprite")]
+    #endregion
+    public Sprite bulletIcon;
+
     #region Validation
 #if UNITY_EDITOR
     //Validate the scriptable object details entered
@@ -115,6 +156,16 @@ public class GameResources : MonoBehaviour
         HelperUtilities.ValidateCheckNullValue(this, nameof(ammoIconPrefab), ammoIconPrefab);
         HelperUtilities.ValidateCheckNullValue(this, nameof(doorOpenSoundEffect), doorOpenSoundEffect);
         HelperUtilities.ValidateCheckNullValue(this, nameof(soundsMasterMixerGroup), soundsMasterMixerGroup);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(heartImage), heartImage);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(tableFlipSoundEffect), tableFlipSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(chestOpenSoundEffect), chestOpenSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(healthPickUpSoundEffect), healthPickUpSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(ammoPickupSoundEffect), ammoPickupSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(weaponPickupSoundEffect), weaponPickupSoundEffect);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(materializeShader), materializeShader);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(chestItemPrefab), chestItemPrefab);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(heartIcon), heartIcon);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(bulletIcon), bulletIcon);
     }
 
 #endif

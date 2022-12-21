@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d3e5e0541142c4ab6cde548b83d0d2, type: 3}
+  m_Name: AmmoDetails_Enemy_Sniper
+  m_EditorClassIdentifier: 
+  ammoName: Sniper Ammo
+  isPlayerAmmo: 0
+  ammoSprite: {fileID: 21300000, guid: e36e8bbd18074d341b170885ac002038, type: 3}
+  ammoPrefabArray:
+  - {fileID: 5196961426759006828, guid: e81acd5d60c30074ebb758c373e5595d, type: 3}
+  ammoMaterial: {fileID: 2100000, guid: a8f373dc317a30d40a68b73a78ce1d09, type: 2}
+  ammoChargeTime: 0
+  ammoChargeMaterial: {fileID: 0}
+  ammoHitEffectSO: {fileID: 11400000, guid: c9d0a82a88fe2694a9a8198f98b33e53, type: 2}
+  ammoDamage: 20
+  ammoSpeedMin: 16
+  ammoSpeedMax: 16
+  ammoRange: 30
+  ammoRotationSpeed: 1
+  ammoSpreadMin: 0.5
+  ammoSpreadMax: 1.5
+  ammoSpawnAmountMin: 1
+  ammoSpawnAmountMax: 1
+  ammoSpawnIntervalMin: 0.1
+  ammoSpawnIntervalMax: 0.1
+  isAmmoTrail: 0
+  isSmokeTrail: 0
+  ammoTrailTime: 0
+  ammoTrailMaterial: {fileID: 0}
+  ammoTrailStartWidth: 0
+  ammoTrailEndWidth: 0

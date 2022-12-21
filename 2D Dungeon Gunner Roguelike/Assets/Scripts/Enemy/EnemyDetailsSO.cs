@@ -102,6 +102,11 @@ public class EnemyDetailsSO : ScriptableObject
     #endregion
     public bool firingLineOfSightRequired;
 
+    #region Tooltip
+    [Tooltip("Select this if the enemy has multiple weapons to cycle through")]
+    #endregion
+    public bool hasMultipleWeapons;
+
     #region Header ENEMY HEALTH
     [Space(10)]
     [Header("ENEMY HEALTH")]

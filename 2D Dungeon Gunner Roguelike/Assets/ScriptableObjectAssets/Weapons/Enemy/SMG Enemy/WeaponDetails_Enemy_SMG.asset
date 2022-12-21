@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c20f8e2ee902046b3f1adbba0244e1, type: 3}
   m_Name: WeaponDetails_Enemy_SMG
   m_EditorClassIdentifier: 
-  weaponName: SMG
+  weaponName: SMG Enemy
   weaponSprite: {fileID: 21300000, guid: 03a1ea0c5593c7e469d960da55763a21, type: 3}
   weaponShootPosition: {x: 1.4, y: 0.27, z: 0}
-  weaponCurrentAmmo: {fileID: 11400000, guid: 26f31d0393bfac649932d93a3c7ce15d, type: 2}
-  weaponShootEffectSO: {fileID: 11400000, guid: c2ea1ffda7e6d4d4a83d072bb915bfe1, type: 2}
-  weaponFiringSoundEffect: {fileID: 11400000, guid: 083b64183f4f3994ba2103f844224cb4, type: 2}
-  weaponReloadingSoundEffect: {fileID: 11400000, guid: ce01952b6e2fb504ea2f19362aee6f7b, type: 2}
-  hasInfiniteAmmo: 0
+  weaponCurrentAmmo: {fileID: 11400000, guid: 1669fca251181134da1051f1efbc8679, type: 2}
+  weaponShootEffectSO: {fileID: 11400000, guid: 75e9440364c0ce2419e944761018dcaa, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: 661acfd6e67ae684e83bff350439a50f, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: c47d0158b36b02b4fbd57e5b98521b93, type: 2}
+  hasInfiniteAmmo: 1
   hasInfiniteClipCapacity: 0
   weaponClipCapacity: 15
   weaponAmmoCapacity: 50

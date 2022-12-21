@@ -40,7 +40,11 @@ public class EnemyWeaponAI : MonoBehaviour
     {
         //Update Timers
         firingIntervalTimer -= Time.deltaTime;
-        weaponChangeDelayTimer -= Time.deltaTime;
+
+        if (enemyDetailsSO.hasMultipleWeapons)
+        {
+            weaponChangeDelayTimer -= Time.deltaTime;
+        }
 
         //Interval Timer
         if (firingIntervalTimer < 0f)
@@ -60,11 +64,8 @@ public class EnemyWeaponAI : MonoBehaviour
         }
 
         //Change Weapon Timer
-        if (weaponChangeDelayTimer <= 0f)
+        if (weaponChangeDelayTimer <= 0f && enemyDetailsSO.hasMultipleWeapons)
         {
-            if (enemy.enemyDetails.enemyWeapon.Length < 2)
-                return;
-
             enemy.SetEnemyStartingWeapon();
             weaponChangeDelayTimer = ChangeWeaponDelay();
         }

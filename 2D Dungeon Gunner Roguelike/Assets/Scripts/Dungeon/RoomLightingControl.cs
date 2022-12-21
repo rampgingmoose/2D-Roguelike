@@ -108,7 +108,7 @@ public class RoomLightingControl : MonoBehaviour
     private IEnumerator FadeInEnvironmentLightingRoutine(Material material, Environment[] environmentComponents)
     {
         //Graduall fade in the lighting
-        for (float i = 0; i <= 1f; i += Time.deltaTime / Settings.fadeInTime)
+        for (float i = 0.05f; i <= 1f; i += Time.deltaTime / Settings.fadeInTime)
         {
             material.SetFloat("Aplha_Slider", i);
             yield return null;
