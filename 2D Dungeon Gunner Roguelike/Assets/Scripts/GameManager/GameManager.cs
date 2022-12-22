@@ -20,6 +20,10 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [Tooltip("Populate with the FadeImage canvasGroup component in the FadeScreenUI")]
     #endregion Tooltip
     [SerializeField] private CanvasGroup fadeScreenImageCanvasGroup;
+    #region Tooltip
+    [Tooltip("Populate with pause menu gameObject")]
+    #endregion
+    [SerializeField] private GameObject pauseMenu;
 
     #region Header DUNGEON LEVELS
     [Space(10)]
@@ -41,9 +45,10 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     private Player player;
     private InstantiatedRoom bossRoom;
     [SerializeField] public BossHealthBarUI bossHealthBarUI;
+    [SerializeField] private bool isFading = false;
 
-    [HideInInspector] public GameState gameState;
-    [HideInInspector] public GameState previousGameState;
+    public GameState gameState;
+    public GameState previousGameState;
 
     private long playerScore;
     private int scoreMultiplier;
@@ -172,6 +177,60 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
                 break;
 
+            //While playing the level handle the tab key for dungeon overview map
+            case GameState.playingLevel:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGameMenu();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+                break;
+
+            case GameState.engagingEnemies:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGameMenu();
+                }
+                break;
+
+            //If in the dungeon overview map handle the release of the tab key to clear the map
+            case GameState.dungeonOverviewMap:
+
+                if (Input.GetKeyUp(KeyCode.Tab))
+                {
+                    DungeonMap.Instance.ClearDungeonOverviewMap();
+                }
+                break;
+
+            //While playing the level before the boss is engaged, handle the tab key for the dungeon overview map
+            case GameState.bossStage:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGameMenu();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+
+                break;
+
+            case GameState.engagingBoss:
+
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGameMenu();
+                }
+                break;
+
             case GameState.levelCompleted:
 
                 StartCoroutine(LevelCompleted());
@@ -201,6 +260,14 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 
                 RestartGame();
 
+                break;
+
+            //if the game is paused and the pause menu showing then pressing escape again will clear the pause menu
+            case GameState.gamePaused:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    PauseGameMenu();
+                }
                 break;
         }
     }
@@ -288,6 +355,39 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         }
     }
 
+    public void PauseGameMenu()
+    {
+        if (gameState != GameState.gamePaused)
+        {
+            pauseMenu.SetActive(true);
+            GetPlayer().playerControl.DisablePlayer();
+
+            previousGameState = gameState;
+            gameState = GameState.gamePaused;
+        }
+        else if(gameState == GameState.gamePaused)
+        {
+            pauseMenu.SetActive(false);
+            GetPlayer().playerControl.EnablePlayer();
+
+            gameState = previousGameState;
+            previousGameState = GameState.gamePaused;
+        }
+    }
+
+    /// <summary>
+    /// Dungeon Overview map screen display
+    /// </summary>
+    private void DisplayDungeonOverviewMap()
+    {
+        //return if fading
+        if (isFading)
+            return;
+
+        //Display dungeonOverview map
+        DungeonMap.Instance.DisplayDungeonOverviewMap();
+    }
+
     /// <summary>
     /// Enter Boss Stage
     /// </summary>
@@ -335,6 +435,9 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         yield return StartCoroutine(DisplayMessageRoutine("COLLECT ANY ITEMS YOU NEED, THEN PRESS ENTER \n\n" +
             "TO DESCEND FURTHER INTO THE HIDEOUT", Color.white, 5f));
 
+        //Fade canvas back to normal
+        yield return StartCoroutine(FadeScreen(1f, 0f, 2f, new Color(0f, 0f, 0f, 0f)));
+
 
         //When player presses the return key proceed to the next level
         while (!Input.GetKeyDown(KeyCode.Return))
@@ -350,8 +453,10 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         PlayDungeonLevel(currentDungeonLevelListIndex);
     }
 
-    private IEnumerator FadeScreen(float startFadeAlpha, float targetFadeAlpha, float fadeSeconds, Color backgroundGroundColor)
+    public IEnumerator FadeScreen(float startFadeAlpha, float targetFadeAlpha, float fadeSeconds, Color backgroundGroundColor)
     {
+        isFading = true;
+
         Image image = fadeScreenImageCanvasGroup.GetComponent<Image>();
         image.color = backgroundGroundColor;
 
@@ -363,6 +468,8 @@ public class GameManager : SingletonMonoBehavior<GameManager>
             fadeScreenImageCanvasGroup.alpha = Mathf.Lerp(startFadeAlpha, targetFadeAlpha, time / fadeSeconds);
             yield return null;
         }
+
+        isFading = false;
     }
 
     private IEnumerator DisplayDungeonLevelText()
@@ -500,6 +607,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
 #if UNITY_EDITOR
     private void OnValidate()
     {
+        HelperUtilities.ValidateCheckNullValue(this, nameof(pauseMenu), pauseMenu);
         HelperUtilities.ValidateCheckNullValue(this, nameof(messageTextUI), messageTextUI);
         HelperUtilities.ValidateCheckNullValue(this, nameof(fadeScreenImageCanvasGroup), fadeScreenImageCanvasGroup);
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(dungeonLevelList), dungeonLevelList);

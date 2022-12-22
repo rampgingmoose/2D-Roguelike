@@ -46,6 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomNodeTypeList: {fileID: 11400000, guid: 8766c036dbc21e742b7575a42f19371e, type: 2}
   currentPlayer: {fileID: 11400000, guid: 28db7f98778323b40802d71925ea5e56, type: 2}
+  mainMenuMusic: {fileID: 11400000, guid: e8e27f3f1a341ca4b8ec72bc169987f9, type: 2}
+  musicMasterMixerGroup: {fileID: 24300002, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  musicFullOnSnapshot: {fileID: 24500006, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  musicLowOnSnapshot: {fileID: 8893122114324796974, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
+  musicOffSnapshot: {fileID: -3084740370723268673, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
   soundsMasterMixerGroup: {fileID: -4734643798044506327, guid: 2ac509b551addfb48950fbdc0d9cefb4, type: 2}
   doorOpenSoundEffect: {fileID: 11400000, guid: 67937ce69654c844abbc666d17d42618, type: 2}
   tableFlipSoundEffect: {fileID: 11400000, guid: 6bd17a1d07fa61b43877497d66ce431b, type: 2}
@@ -67,3 +72,4 @@ MonoBehaviour:
   chestItemPrefab: {fileID: 4523982615732347990, guid: e71bf2cd699d817418238f35bb4a2db7, type: 3}
   heartIcon: {fileID: 21300000, guid: f4cac27578e8b884fb92fbd720409aa0, type: 3}
   bulletIcon: {fileID: 21300000, guid: a2482871b46d396438236c07b6402283, type: 3}
+  bossMinimapPrefab: {fileID: 4681907739398856764, guid: 8b8db275b530a8e4c8211526cd160b05, type: 3}

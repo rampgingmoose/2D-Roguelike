@@ -37,6 +37,31 @@ public class GameResources : MonoBehaviour
     #endregion
     public CurrentPlayerSO currentPlayer;
 
+    #region Header MUSIC
+    [Space(10)]
+    [Header("MUSIC")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Populate with main menu music scriptable object")]
+    #endregion
+    public MusicTrackSO mainMenuMusic;
+    #region Tooltip
+    [Tooltip("Populate with the music master mixer group")]
+    #endregion
+    public AudioMixerGroup musicMasterMixerGroup;
+    #region Tooltip
+    [Tooltip("music on full snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicFullOnSnapshot;
+    #region Tooltip
+    [Tooltip("music on low snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicLowOnSnapshot;
+    #region Tooltip
+    [Tooltip("music off snapshot")]
+    #endregion
+    public AudioMixerSnapshot musicOffSnapshot;
+
     #region Header SOUNDS
     [Space(10)]
     [Header("SOUNDS")]
@@ -141,6 +166,15 @@ public class GameResources : MonoBehaviour
     #endregion
     public Sprite bulletIcon;
 
+    #region Header MINIMAP
+    [Space(10)]
+    [Header("MINIMAP")]
+    #endregion
+    #region
+    [Tooltip("Populate with boss minimap Prefab")]
+    #endregion
+    public GameObject bossMinimapPrefab;
+
     #region Validation
 #if UNITY_EDITOR
     //Validate the scriptable object details entered
@@ -166,6 +200,12 @@ public class GameResources : MonoBehaviour
         HelperUtilities.ValidateCheckNullValue(this, nameof(chestItemPrefab), chestItemPrefab);
         HelperUtilities.ValidateCheckNullValue(this, nameof(heartIcon), heartIcon);
         HelperUtilities.ValidateCheckNullValue(this, nameof(bulletIcon), bulletIcon);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(bossMinimapPrefab), bossMinimapPrefab);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicMasterMixerGroup), musicMasterMixerGroup);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicFullOnSnapshot), musicFullOnSnapshot);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicLowOnSnapshot), musicLowOnSnapshot);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(musicOffSnapshot), musicOffSnapshot);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(mainMenuMusic), mainMenuMusic);
     }
 
 #endif

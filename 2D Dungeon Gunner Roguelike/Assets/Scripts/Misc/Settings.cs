@@ -56,15 +56,20 @@ public static class Settings
 
     //Animator parameters - door
     public static int open = Animator.StringToHash("open");
-    #endregion
 
     //Animator parameters - Destroyable Environment Objects
     public static int destroy = Animator.StringToHash("destroy");
     public static string stateDestroyed = "Destroyed";
+    #endregion
 
     #region GAMEOBJECT TAGS
     public const string playerTag = "Player";
     public const string playerWeapon = "playerWeapon";
+    #endregion
+
+    #region AUDIO
+    public const float musicFadeOutTime = 0.5f; //Default Music Fade Out Transition
+    public const float musicFadeInTime = 0.5f; //Default Music Fade In Transition
     #endregion
 
     #region FIRING CONTROL

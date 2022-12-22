@@ -313,6 +313,10 @@ public class InstantiatedRoom : MonoBehaviour
 
                     //lock the door to prevent access to the room
                     doorComponent.LockDoor();
+
+                    //Instantiate boss skull minimap icon by door
+                    GameObject skullIcon = Instantiate(GameResources.Instance.bossMinimapPrefab, gameObject.transform);
+                    skullIcon.transform.localPosition = door.transform.localPosition;
                 }
             }
         }
