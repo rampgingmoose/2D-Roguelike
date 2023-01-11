@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c20f8e2ee902046b3f1adbba0244e1, type: 3}
+  m_Name: WeaponDetails_HalfCirclePattern_Enemy
+  m_EditorClassIdentifier: 
+  weaponName: Half Circle
+  weaponSprite: {fileID: 0}
+  weaponShootPosition: {x: 0, y: 0, z: 0}
+  weaponCurrentAmmo: {fileID: 11400000, guid: 75621e3b53863ee44bcb7d705b902a41, type: 2}
+  weaponShootEffectSO: {fileID: 11400000, guid: 9a879ad52e48f6344afdecc54efa0937, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: 411608fc947c74148bd145ab520b7e04, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: 49d457133ba70b3488080a8511f3205e, type: 2}
+  hasInfiniteAmmo: 1
+  hasInfiniteClipCapacity: 1
+  weaponClipCapacity: 0
+  weaponAmmoCapacity: 0
+  weaponFireRate: 3
+  weaponPrechargeTime: 0
+  weaponReloadTime: 0
+  hasFireCoroutine: 1

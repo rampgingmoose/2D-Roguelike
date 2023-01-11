@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c20f8e2ee902046b3f1adbba0244e1, type: 3}
+  m_Name: WeaponDetails_ExpandingCirclePattern_Enemy
+  m_EditorClassIdentifier: 
+  weaponName: Expanding Circle Pattern
+  weaponSprite: {fileID: 0}
+  weaponShootPosition: {x: 0, y: 0, z: 0}
+  weaponCurrentAmmo: {fileID: 11400000, guid: 7ae09ca1ab2df284db4f4fa0d3c8a086, type: 2}
+  weaponShootEffectSO: {fileID: 11400000, guid: 37b8cecd9868c69429825d4c1061c829, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: c30f0ff57bd81f34b97721f3ea9c6fe9, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: d10317aa35c8e4c488e7bfc35b666dc3, type: 2}
+  hasInfiniteAmmo: 1
+  hasInfiniteClipCapacity: 1
+  weaponClipCapacity: 0
+  weaponAmmoCapacity: 0
+  weaponFireRate: 3
+  weaponPrechargeTime: 0
+  weaponReloadTime: 0
+  hasFireCoroutine: 0

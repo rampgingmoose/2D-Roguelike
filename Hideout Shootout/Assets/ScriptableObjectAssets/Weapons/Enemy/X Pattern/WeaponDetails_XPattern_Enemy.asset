@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c20f8e2ee902046b3f1adbba0244e1, type: 3}
+  m_Name: WeaponDetails_XPattern_Enemy
+  m_EditorClassIdentifier: 
+  weaponName: X Pattern
+  weaponSprite: {fileID: 21300000, guid: 33eb341569034234e93f487c8b9b319c, type: 3}
+  weaponShootPosition: {x: 0, y: 0, z: 0}
+  weaponCurrentAmmo: {fileID: 11400000, guid: a0d6e8ea2260ca4449dd68c719c65888, type: 2}
+  weaponShootEffectSO: {fileID: 11400000, guid: d727557e848a12b40a8ea09bdb6048f5, type: 2}
+  weaponFiringSoundEffect: {fileID: 11400000, guid: 32f9080bc8d6de545b684a74336336b8, type: 2}
+  weaponReloadingSoundEffect: {fileID: 11400000, guid: 233ceeca559866948a6b19a14c93d59a, type: 2}
+  hasInfiniteAmmo: 1
+  hasInfiniteClipCapacity: 1
+  weaponClipCapacity: 0
+  weaponAmmoCapacity: 0
+  weaponFireRate: 3
+  weaponPrechargeTime: 0
+  weaponReloadTime: 0
+  hasFireCoroutine: 0
